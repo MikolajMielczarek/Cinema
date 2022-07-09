@@ -19,8 +19,7 @@ const thirdReq = document.querySelector(".third-req")
 const firstSubBtn = document.querySelector(".first-step-sub-btn")
 const secondSubBtn = document.querySelector(".second-step-sub-btn")
 
-
-let name = "";
+const h2Name = document.querySelector(".h2-name")
 
 
 //adding event listener with functionto see password input
@@ -75,14 +74,17 @@ formFirst.addEventListener('submit', (e) => {
     containerFirstReg.classList.add("display");
 })
 
-/*
-//save the value of name
+//change name in last message
+const changeName = name => {
+    h2Name.textContent = `Good job ${name}!`
+}
 
+//save the value of name
 inputName.addEventListener("keyup", () => {
     const name = inputName.value.trim();
-    
+    changeName(name);
 })
-*/
+
 
 
 //validation for birthday date
