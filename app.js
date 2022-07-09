@@ -1,5 +1,6 @@
 const containerFirstReg = document.querySelector(".registration-first-step");
 const containerSecondReg = document.querySelector(".registration-second-step");
+const containerSucces = document.querySelector(".registration-success-message")
 
 const formFirst = document.querySelector(".first-form")
 const formSecond = document.querySelector(".second-form")
@@ -20,6 +21,9 @@ const firstSubBtn = document.querySelector(".first-step-sub-btn")
 const secondSubBtn = document.querySelector(".second-step-sub-btn")
 
 const h2Name = document.querySelector(".h2-name")
+const h4Email = document.querySelector(".h4-email")
+
+const lastBtn = document.querySelector(".last-btn")
 
 
 //adding event listener with functionto see password input
@@ -66,12 +70,22 @@ inputPass.addEventListener("keyup", () => {
     checkingPassword(pass);
 });
 
+//change email in the very last message
+const changeEmail = email => {
+    h4Email.textContent = `We have sent you an email to ${email}.
+    Make sure to click the link from the message to activate your account.`
+}
+//save the value of email
+inputEmail.addEventListener("keyup", () => {
+    const email = inputEmail.value.trim();
+    changeEmail(email);
+})
 
 //submit for first step
 formFirst.addEventListener('submit', (e) => {
     e.preventDefault();
-
     containerFirstReg.classList.add("display");
+    containerSecondReg.classList.remove("display");
 })
 
 //change name in last message
@@ -85,8 +99,6 @@ inputName.addEventListener("keyup", () => {
     changeName(name);
 })
 
-
-
 //validation for birthday date
 const overEighteen = dayOfBirth => {
     const eighteenAgo = new Date();
@@ -97,7 +109,7 @@ const overEighteen = dayOfBirth => {
         alert("You should be minimum 18 years old - because of that register button is disabled");
     }
 }
-
+//checking the age
 inputDate.onchange = (e) => {
     secondSubBtn.setAttribute("disabled","");
     const dayOfBirth = new Date(e.target.value);
@@ -108,5 +120,17 @@ inputDate.onchange = (e) => {
 formSecond.addEventListener('submit', (e) => {
     e.preventDefault();
     containerSecondReg.classList.add("display");
+    containerSucces.classList.remove("display");
 })
 
+//submit for third step
+lastBtn.addEventListener('click', (e) => {
+    containerSucces.classList.add("display");
+    containerFirstReg.classList.remove("display");
+    inputEmail.value = "";
+    inputPass.value = "";
+    inputName.value = "";
+    inputLastName.value = "";
+    inputCheck.checked = false;
+    inputDate.value = null;
+})
