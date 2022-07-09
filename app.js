@@ -1,14 +1,26 @@
 const containerFirstReg = document.querySelector(".registration-first-step");
+const containerSecondReg = document.querySelector(".registration-second-step");
 
 const formFirst = document.querySelector(".first-form")
+const formSecond = document.querySelector(".second-form")
 const imgPass = document.querySelector(".registration-first-step img")
+
 const inputPass = document.querySelector(".input-password")
 const inputEmail = document.querySelector(".input-email")
+const inputName = document.querySelector(".input-name")
+const inputLastName = document.querySelector(".input-last-name")
+const inputDate = document.querySelector(".input-date")
+const inputCheck = document.querySelector(".input-check")
+
 const firstReq = document.querySelector(".first-req")
 const secondReq = document.querySelector(".second-req")
 const thirdReq = document.querySelector(".third-req")
-const firstSubBtn = document.querySelector(".first-step-sub-btn")
 
+const firstSubBtn = document.querySelector(".first-step-sub-btn")
+const secondSubBtn = document.querySelector(".second-step-sub-btn")
+
+
+let name = "";
 
 
 //adding event listener with functionto see password input
@@ -59,7 +71,40 @@ inputPass.addEventListener("keyup", () => {
 //submit for first step
 formFirst.addEventListener('submit', (e) => {
     e.preventDefault();
+
     containerFirstReg.classList.add("display");
 })
 
+/*
+//save the value of name
+
+inputName.addEventListener("keyup", () => {
+    const name = inputName.value.trim();
+    
+})
+*/
+
+
+//validation for birthday date
+const overEighteen = dayOfBirth => {
+    const eighteenAgo = new Date();
+    eighteenAgo.setFullYear(eighteenAgo.getFullYear() - 18);
+    if (dayOfBirth <= eighteenAgo) {
+        secondSubBtn.removeAttribute("disabled","");
+    }else{
+        alert("You should be minimum 18 years old - because of that register button is disabled");
+    }
+}
+
+inputDate.onchange = (e) => {
+    secondSubBtn.setAttribute("disabled","");
+    const dayOfBirth = new Date(e.target.value);
+    overEighteen(dayOfBirth);
+}
+
+//submit for second step
+formSecond.addEventListener('submit', (e) => {
+    e.preventDefault();
+    containerSecondReg.classList.add("display");
+})
 
