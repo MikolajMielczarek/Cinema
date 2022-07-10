@@ -73,7 +73,7 @@ inputPass.addEventListener("keyup", () => {
 
 //change email in the very last message
 const changeEmail = email => {
-    h4Email.textContent = `We have sent you an email to ${email}.
+    h4Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
     Make sure to click the link from the message to activate your account.`
 }
 //save the value of email
@@ -91,7 +91,7 @@ formFirst.addEventListener('submit', (e) => {
 
 //change name in last message
 const changeName = name => {
-    h2Name.textContent = `Good job <span>${name}</span>!`
+    h2Name.textContent = `Good job ${name}!`
 }
 
 //save the value of name
