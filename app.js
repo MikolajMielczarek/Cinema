@@ -91,7 +91,7 @@ formFirst.addEventListener('submit', (e) => {
 
 //change name in last message
 const changeName = name => {
-    h2Name.textContent = `Good job ${name}!`
+    h2Name.textContent = `Good job <span>${name}</span>!`
 }
 
 //save the value of name
