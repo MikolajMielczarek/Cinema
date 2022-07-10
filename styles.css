@@ -26,28 +26,9 @@ body {
     padding: 25px 48px;
 }
 
-.container-header > span {
-    display: flex;
-    color: #343541;
-    font-style: normal;
-    font-family: 'Roboto Mono';
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0,03em;
-    text-transform: uppercase;
-    line-height: 21px;
-}
-
-.container-header > span > span {
-    color: rgb(164, 27, 27);
-    padding-left: 7px;
-    padding-right: 7px;
-    font-size: 22px;
-}
-
 /***firs step of registration***/
 
-.registration-first-step {
+.registration {
     display: flex;
     width:55%;
     flex-direction: column;
@@ -71,7 +52,7 @@ body {
     padding-bottom: 40px;
 }
 
-.first-form {
+.form {
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -99,13 +80,12 @@ label {
     flex-direction: row;
     align-items: center;
     background: #F7F7F7;
-    border-radius: 8px;
 }
 
 .input-div input {
-    display: flex;
     height: 55px;
-    width: 472px;
+    width: 100%;
+    border-radius: 8px;
     font-size: 18px;
     background: #F7F7F7;
     color:#85868D;
@@ -113,8 +93,24 @@ label {
     padding: 24px;
 }
 
+.input-div input:hover {
+    background: #E5E5E5;
+}
+
+.input-div input:focus {
+    background-color: rgba(47, 128, 237, 0.1);
+    outline: 2px solid #2F80ED;
+}
+
+.input-red-border-focus input:focus {
+    outline: 2px solid #EC1115;
+}
+
 .input-div img {
+    position: absolute;
+    left: 63%;
     padding-right: 25px;
+    z-index: 1;
 }
 
 .password-requirements {
@@ -167,12 +163,50 @@ a {
     padding: 20px 40px;
     background-color: #EC1115;
     border-radius: 64px;
-    border-style: hidden;
-
-
+    border: unset;
 }
 
+.container-btn button:hover {
+    background: #A60C0E;
+}
+.conteiner-btn button:active {
+    border: 15px solid #F47073;
+}
 
+/***second step of registration***/
+
+
+.input-div-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.input-check {
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border: 0.75px solid #AEAEB3;
+    border-radius: 8px;
+}
+
+.txt {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #292A33;
+}
+
+.input-div-check a {
+    text-decoration: underline !important;
+}
+
+/***third step of registration***/
 
 
 

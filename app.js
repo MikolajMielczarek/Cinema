@@ -1,10 +1,10 @@
-const containerFirstReg = document.querySelector(".registration-first-step");
-const containerSecondReg = document.querySelector(".registration-second-step");
-const containerSucces = document.querySelector(".registration-success-message")
+const containerFirstReg = document.querySelector(".first-step");
+const containerSecondReg = document.querySelector(".second-step");
+const containerSucces = document.querySelector(".success-message")
 
 const formFirst = document.querySelector(".first-form")
 const formSecond = document.querySelector(".second-form")
-const imgPass = document.querySelector(".registration-first-step img")
+const imgPass = document.querySelector(".first-step img")
 
 const inputPass = document.querySelector(".input-password")
 const inputEmail = document.querySelector(".input-email")
@@ -61,6 +61,7 @@ const checkingPassword = pass => {
     //if all of 3 are ok!
     if(firstReq.style.color === "green" && secondReq.style.color === "green" && thirdReq.style.color === "green") {
         firstSubBtn.removeAttribute("disabled","");
+        inputPass.style.outline = "0px"
     }
 }
 
