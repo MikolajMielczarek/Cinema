@@ -134,4 +134,7 @@ lastBtn.addEventListener('click', (e) => {
     inputLastName.value = "";
     inputCheck.checked = false;
     inputDate.value = null;
+    firstReq.style.color = "red";
+    secondReq.style.color = "red";
+    thirdReq.style.color = "red";
 })

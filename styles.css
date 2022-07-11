@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: snow;
+    background-color: #FFFFFF;
 }
 
 .container-page {
@@ -248,7 +248,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 42%;
     font-family: 'Roboto Mono';
     font-style: normal;
     font-weight: 500;
@@ -277,5 +277,582 @@ a {
 
 /********media queries********/
 
+/****Mobile devices****/
+
+@media (max-width:350px) {
+
+    .container-page {
+        width: 320px;
+        padding: 0px 0px 40px 0px;
+    }
+
+    .container-header img:last-of-type {
+        display: none;
+    }
+    
+    .container-header {
+        justify-content: center;
+        padding: 24px 0px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:100%;
+        padding: 24px 24px 22px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 30px;
+        line-height: 31px;
+        text-align: center;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 10px;
+    }
+    
+    .form {
+        box-shadow: none;
+        padding:  0px;
+    }
+    
+    .input-div input {
+        font-size: 12px;
+    }
+
+    .input-div img {
+        left: 70%;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+    
+    .container-btn {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    a {
+        padding-top: 35px;
+    }
+    
+    .container-btn button {
+        width: 85%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        padding-top: 30px;
+    }
+
+    .h2-name {
+        padding-bottom: 24px;
+    }
+    
+    .h4-email {
+        width: 64%;
+        font-size: 13px;
+        line-height: 19px;
+        margin-right: 50px;
+        padding-bottom: 20px;
+        text-align: left;
+    }
+
+    .h4-email span {
+        font-weight: 500;
+
+    }
+      
+    .container-btn-2 button {
+        width: 105%;
+    }
+
+}
+
+@media (min-width:351px) and (max-width:480px) {
+
+    .container-page {
+        width: 375px;
+        padding: 0px 0px 80px 0px;
+    }
+
+    .container-header img:last-of-type {
+        display: none;
+    }
+    
+    .container-header {
+        justify-content: center;
+        padding: 24px 0px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:110%;
+        height: 678px;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        width: 100%;
+        font-size: 40px;
+        line-height: 41px;
+        text-align: center;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        box-shadow: none;
+        padding:  0px;
+    }
+    
+    .input-div img {
+        left: 75%;
+    }
+
+    .password-requirements {
+        padding-bottom: 45px;
+    }
+    
+    .container-btn {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    a {
+        padding-top: 35px;
+    }
+    
+    .container-btn button {
+        width: 100%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .second-step {
+        height: auto;
+    }
+
+    .second-form h3 {
+        padding-bottom: 25px;
+    }
+
+    .input-div-check a {
+        padding: 0px;
+    }
+
+    /***third step of registration***/
+
+    .success-message {
+        padding-top: 140px;
+        height: auto;
+    }
+    
+    .h4-email {
+        width: 80%;
+    }
+      
+    .container-btn-2 button {
+        width: 100%;
+    }
+}
+
+/****iPads, Tablets****/
+
+@media (min-width:481px) and (max-width:768px) {
+    
+    .container-page {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .container-header img:last-of-type {
+        display: none;
+    }
+    
+    .container-header {
+        justify-content: flex-start;
+        padding: 30px 90px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:100%;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 50px;
+        line-height: 51px;
+        text-align: center;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        box-shadow: none;
+        padding:  0px;
+    }
+    
+    .input-div img {
+        left: 77%;
+    }
+    
+    .container-btn {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    a {
+        padding-top: 35px;
+    }
+    
+    .container-btn button {
+        width: 65%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        padding-top: 140px;
+    }
+    
+    .h4-email {
+        width: 54%;
+    }
+      
+    .container-btn-2 button {
+        width: 65%;
+    }
+}
+
+/****Small screens, laptops 1****/
+
+@media (min-width:769px) and (max-width:912px) {
+
+    .container-page {
+        width: 840px;
+        padding: 0px 42px 170px 40px;
+    }
+    
+    .container-header {
+        padding: 25px 80px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:100%;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 65px;
+        line-height: 66px;
+        padding-left: 95px;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        width: 70%;
+        padding: 50px;
+    }
+    
+    .input-div img {
+        left: 67%;
+    }
+    
+    .container-btn {
+        align-items: center;
+    }
+    
+    .container-btn button {
+        width: 50%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        width: 90%;
+        padding-top: 140px;
+    }
+
+    .success-message h2 {
+        padding-left: 0px;
+    }
+    
+    .h4-email {
+        width: 85%;
+    }
+      
+    .container-btn-2 button {
+        width: 45%;
+    }
+
+}
+
+/****Small screens, laptops 2****/
+
+@media (min-width:913px) and (max-width:1024px) {
+    
+    .container-page {
+        width: 100%;
+        padding: 0px 40px 160px 38px;
+    }
+    
+    .container-header {
+        padding: 30px 90px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:100%;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 70px;
+        line-height: 71px;
+        padding-left: 95px;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        width: 65%;
+        padding: 50px;
+    }
+    
+    .input-div img {
+        left: 65%;
+    }
+    
+    .container-btn {
+        align-items: center;
+    }
+    
+    .container-btn button {
+        width: 50%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        width: 90%;
+        padding-top: 140px;
+    }
+
+    .success-message h2 {
+        padding-left: 0px;
+    }
+    
+    .h4-email {
+        width: 85%;
+    }
+      
+    .container-btn-2 button {
+        width: 45%;
+    }
+
+}
+
+/****Desktops, large screens****/
+
+@media (min-width:1025px) and (max-width:1200px) {
+
+    .container-page {
+        width: 110%;
+        padding: 0px 45px 200px 42px;
+    }
+    
+    .container-header {
+        padding: 25px 75px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:90%;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 80px;
+        line-height: 66px;
+        padding-left: 95px;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        width: 65%;
+        padding: 50px;
+    }
+    
+    .input-div img {
+        left: 72%;
+    }
+    
+    .container-btn {
+        align-items: center;
+    }
+    
+    .container-btn button {
+        width: 50%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        width: 90%;
+        padding-top: 140px;
+    }
+
+    .success-message h2 {
+        padding-left: 0px;
+    }
+    
+    .h4-email {
+        width: 85%;
+    }
+      
+    .container-btn-2 button {
+        width: 45%;
+    }
+}
+
+/****Extra large screens, TV 1****/
+/*****main designe for 1440px****/
+
+/****Extra large screens, TV 2****/
+@media (min-width:1560px) and (max-width:1650px) {
+
+    .container-page {
+        width: 100%;
+        padding: 0px 60px 280px 42px;
+    }
+
+    .container-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        padding: 25px 48px;
+    }
 
 
+    /***firs step of registration***/
+    
+    .registration {
+        width:80%;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h2-grey-1 {
+        font-size: 100px;
+        line-height: 101px;
+        padding-left: 95px;
+    }
+    
+    .h2-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        width: 65%;
+        padding: 50px;
+    }
+    
+    .input-div img {
+        left: 65%;
+    }
+    
+    .container-btn {
+        align-items: center;
+    }
+    
+    .container-btn button {
+        width: 50%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+    
+    /***third step of registration***/
+    
+    .success-message {
+        width: 90%;
+        padding-top: 140px;
+    }
+
+    .success-message h2 {
+        padding-left: 0px;
+    }
+    
+    .h4-email {
+        width: 85%;
+    }
+      
+    .container-btn-2 button {
+        width: 45%;
+    }
+}
