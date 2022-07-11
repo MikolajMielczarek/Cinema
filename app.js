@@ -1,11 +1,19 @@
+//It was the fastes way for me to use only JS not react because I am reapiting all material from JS (courses, notes and projects) and the next one is react - now is Monday(11.07) late night and I will try to solve all with react too, hope to until Wednesday(13.07 03:00pm) I will manage to send also react app.
+//I have the last days in my current job (last day 15.07) and I have to delegate all of duties, so I am not sure if I can do it until then, hope that the solution below will be sufficient in case I would not manage :)
+
+//containers for steps
 const containerFirstReg = document.querySelector(".first-step");
 const containerSecondReg = document.querySelector(".second-step");
 const containerSucces = document.querySelector(".success-message")
 
+//forms
 const formFirst = document.querySelector(".first-form")
 const formSecond = document.querySelector(".second-form")
+
+//img to show password
 const imgPass = document.querySelector(".first-step img")
 
+//inputs
 const inputPass = document.querySelector(".input-password")
 const inputEmail = document.querySelector(".input-email")
 const inputName = document.querySelector(".input-name")
@@ -17,16 +25,18 @@ const firstReq = document.querySelector(".first-req")
 const secondReq = document.querySelector(".second-req")
 const thirdReq = document.querySelector(".third-req")
 
+//buttons
 const firstSubBtn = document.querySelector(".first-step-sub-btn")
 const secondSubBtn = document.querySelector(".second-step-sub-btn")
-
-const h2Name = document.querySelector(".h2-name")
-const h4Email = document.querySelector(".h4-email")
-
 const lastBtn = document.querySelector(".last-btn")
 
+//h1 and h3 (h2 not needed)
+const h1Name = document.querySelector(".h1-name")
+const h3Email = document.querySelector(".h3-email")
 
-//adding event listener with functionto see password input
+
+
+//adding event listener with function to see password input
 imgPass.addEventListener("click", () => {
     if (inputPass.type === "password"){
         inputPass.type = "text";
@@ -71,11 +81,12 @@ inputPass.addEventListener("keyup", () => {
     checkingPassword(pass);
 });
 
-//change email in the very last message
+//change email in the last message
 const changeEmail = email => {
-    h4Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
+    h3Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
     Make sure to click the link from the message to activate your account.`
 }
+
 //save the value of email
 inputEmail.addEventListener("keyup", () => {
     const email = inputEmail.value.trim();
@@ -91,7 +102,7 @@ formFirst.addEventListener('submit', (e) => {
 
 //change name in last message
 const changeName = name => {
-    h2Name.textContent = `Good job ${name}!`
+    h1Name.textContent = `Good job ${name}!`
 }
 
 //save the value of name
@@ -110,6 +121,7 @@ const overEighteen = dayOfBirth => {
         alert("You should be minimum 18 years old - because of that register button is disabled");
     }
 }
+
 //checking the age
 inputDate.onchange = (e) => {
     secondSubBtn.setAttribute("disabled","");
@@ -124,7 +136,7 @@ formSecond.addEventListener('submit', (e) => {
     containerSucces.classList.remove("display");
 })
 
-//submit for third step
+//submit for third step clean all inputs and reset req  for pass
 lastBtn.addEventListener('click', (e) => {
     containerSucces.classList.add("display");
     containerFirstReg.classList.remove("display");

@@ -1,3 +1,9 @@
+/*I did not set up variables - probably good idea - as project is not too big it was not a problem for me*/
+
+/*As I know only I am working on that project I use very "fitting" names for all classes*/
+
+/*I add some responsive for more than projecting 3 screens to to avoid mistakes as much as possible during checking the responsiveness of the application*/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +13,13 @@
 body {
     background-color: #FFFFFF;
 }
-
+/***Container for all content***/
 .container-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 1440px;
-    padding: 0px 50px 200px 48px;
-    margin: 0 auto;
 }
 
 .container-header {
@@ -28,6 +32,7 @@ body {
 
 /***firs step of registration***/
 
+/*for three steps of registration same class*/
 .registration {
     display: flex;
     width:55%;
@@ -37,7 +42,7 @@ body {
     padding-top: 110px;
 }
 
-.h2-grey-1 {
+.h1-grey-1 {
     font-family: 'Eczar';
     width: 85%;
     font-size: 80px;
@@ -47,7 +52,7 @@ body {
     color: #343541;
 }
 
-.h2-grey-2 {
+.h1-grey-2 {
     opacity: 0.6;
     padding-bottom: 40px;
 }
@@ -118,7 +123,7 @@ label {
     padding-bottom: 30px;
 }
 
-h3 {
+h2 {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -182,7 +187,6 @@ a {
 
 /***second step of registration***/
 
-
 .input-div-check {
     display: flex;
     flex-direction: row;
@@ -211,29 +215,31 @@ a {
 
 .input-div-check a {
     text-decoration: underline !important;
+    color: #292A33;
 }
 
 /***third step of registration***/
 
 .success-message {
-    padding-top: 200px;
+    padding-top: 320px;
 }
 
-.h2-name {
+.h1-name {
     padding-bottom: 48px;
     width: auto;
 }
 
-.h4-email {
+.h3-email {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     text-align: center;
     padding-bottom: 48px;
+    color: #292A33;
 }
 
-.h4-email span {
+.h3-email span {
     font-weight: 700;
 }
 
@@ -270,6 +276,7 @@ a {
     border: 5px solid #F47073;
 }
 
+/****show or hide steps****/
 .display {
     display: none;
 }
@@ -302,13 +309,13 @@ a {
         padding: 24px 24px 22px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         font-size: 30px;
         line-height: 31px;
         text-align: center;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 10px;
     }
     
@@ -325,7 +332,7 @@ a {
         left: 70%;
     }
 
-    h3 {
+    h2 {
         font-size: 12px;
     }
     
@@ -355,20 +362,19 @@ a {
         padding-top: 30px;
     }
 
-    .h2-name {
+    .h1-name {
         padding-bottom: 24px;
     }
     
-    .h4-email {
+    .h3-email {
         width: 64%;
         font-size: 13px;
         line-height: 19px;
-        margin-right: 50px;
         padding-bottom: 20px;
         text-align: left;
     }
 
-    .h4-email span {
+    .h3-email span {
         font-weight: 500;
 
     }
@@ -379,7 +385,9 @@ a {
 
 }
 
-@media (min-width:351px) and (max-width:480px) {
+
+
+@media (min-width:351px) and (max-width:414px) {
 
     .container-page {
         width: 375px;
@@ -403,7 +411,7 @@ a {
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         width: 100%;
         font-size: 40px;
         line-height: 41px;
@@ -412,7 +420,7 @@ a {
         padding-right: 24px;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -464,7 +472,101 @@ a {
         height: auto;
     }
     
-    .h4-email {
+    .h3-email {
+        width: 80%;
+    }
+      
+    .container-btn-2 button {
+        width: 100%;
+    }
+}
+
+@media (min-width:415px) and (max-width:480px) {
+
+    .container-page {
+        width: 375px;
+        padding: 0px 0px 80px 0px;
+    }
+
+    .container-header img:last-of-type {
+        display: none;
+    }
+    
+    .container-header {
+        justify-content: center;
+        padding: 24px 0px;
+    }
+    
+    /***firs step of registration***/
+    
+    .registration {
+        width:110%;
+        height: 678px;
+        padding: 64px 24px 32px 24px;
+    }
+    
+    .h1-grey-1 {
+        width: 100%;
+        font-size: 40px;
+        line-height: 41px;
+        text-align: center;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .h1-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        box-shadow: none;
+        padding:  0px;
+    }
+    
+    .input-div img {
+        left: 63%;
+    }
+
+    .password-requirements {
+        padding-bottom: 45px;
+    }
+    
+    .container-btn {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    a {
+        padding-top: 35px;
+    }
+    
+    .container-btn button {
+        width: 100%;
+        padding: 20px 40px;
+    }
+    
+    /***second step of registration***/
+
+    .second-step {
+        height: auto;
+    }
+
+    .second-form h3 {
+        padding-bottom: 25px;
+    }
+
+    .input-div-check a {
+        padding: 0px;
+    }
+
+    /***third step of registration***/
+
+    .success-message {
+        padding-top: 140px;
+        height: auto;
+    }
+    
+    .h3-email {
         width: 80%;
     }
       
@@ -487,7 +589,7 @@ a {
     }
     
     .container-header {
-        justify-content: flex-start;
+        justify-content: center;
         padding: 30px 90px;
     }
     
@@ -498,13 +600,13 @@ a {
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         font-size: 50px;
         line-height: 51px;
         text-align: center;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -543,7 +645,7 @@ a {
         padding-top: 140px;
     }
     
-    .h4-email {
+    .h3-email {
         width: 54%;
     }
       
@@ -557,8 +659,7 @@ a {
 @media (min-width:769px) and (max-width:912px) {
 
     .container-page {
-        width: 840px;
-        padding: 0px 42px 170px 40px;
+        width: 100%;
     }
     
     .container-header {
@@ -572,13 +673,13 @@ a {
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         font-size: 65px;
         line-height: 66px;
         padding-left: 95px;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -613,31 +714,29 @@ a {
         padding-top: 140px;
     }
 
+    .success-message h1 {
+        padding-left: 0px;
+    }
+
     .success-message h2 {
         padding-left: 0px;
     }
     
-    .h4-email {
+    .h3-email {
         width: 85%;
     }
       
     .container-btn-2 button {
-        width: 45%;
+        width: 55%;
     }
 
 }
 
 /****Small screens, laptops 2****/
 
-@media (min-width:913px) and (max-width:1024px) {
-    
+@media (min-width:913px) and (max-width:1024px) { 
     .container-page {
         width: 100%;
-        padding: 0px 40px 160px 38px;
-    }
-    
-    .container-header {
-        padding: 30px 90px;
     }
     
     /***firs step of registration***/
@@ -647,13 +746,13 @@ a {
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
-        font-size: 70px;
-        line-height: 71px;
+    .h1-grey-1 {
+        font-size: 80px;
+        line-height: 81px;
         padding-left: 95px;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -677,6 +776,10 @@ a {
     
     /***second step of registration***/
 
+    .second-step h1:nth-child(1){
+        padding-top: 50px;
+    }
+
     .input-div-check a {
         padding: 0px;
     }
@@ -685,34 +788,28 @@ a {
     
     .success-message {
         width: 90%;
-        padding-top: 140px;
+        padding-top: 340px;
     }
 
-    .success-message h2 {
+    .success-message h1 {
         padding-left: 0px;
     }
     
-    .h4-email {
+    .h3-email {
         width: 85%;
     }
       
     .container-btn-2 button {
         width: 45%;
     }
-
 }
 
 /****Desktops, large screens****/
 
-@media (min-width:1025px) and (max-width:1200px) {
+@media (min-width:1025px) and (max-width:1400px) {
 
     .container-page {
-        width: 110%;
-        padding: 0px 45px 200px 42px;
-    }
-    
-    .container-header {
-        padding: 25px 75px;
+        width: 100%;
     }
     
     /***firs step of registration***/
@@ -722,13 +819,13 @@ a {
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         font-size: 80px;
         line-height: 66px;
         padding-left: 95px;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -738,7 +835,7 @@ a {
     }
     
     .input-div img {
-        left: 72%;
+        left: 67%;
     }
     
     .container-btn {
@@ -751,6 +848,10 @@ a {
     }
     
     /***second step of registration***/
+    
+    .second-step h1:nth-child(1){
+        padding-top: 50px;
+    }
 
     .input-div-check a {
         padding: 0px;
@@ -760,56 +861,59 @@ a {
     
     .success-message {
         width: 90%;
-        padding-top: 140px;
+        padding-top: 350px;
     }
 
-    .success-message h2 {
+    .success-message h1 {
         padding-left: 0px;
     }
     
-    .h4-email {
+    .h3-email {
         width: 85%;
     }
       
     .container-btn-2 button {
-        width: 45%;
+        width: 35%;
     }
 }
 
-/****Extra large screens, TV 1****/
+/****Large screens, TV****/
 /*****main designe for 1440px****/
 
-/****Extra large screens, TV 2****/
-@media (min-width:1560px) and (max-width:1650px) {
+/****Extra large screens, TV 1****/
+@media (min-width:1536px) and (max-width:1680px) {
 
     .container-page {
         width: 100%;
-        padding: 0px 60px 280px 42px;
     }
 
     .container-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        align-self: stretch;
         padding: 25px 48px;
     }
 
+    .container-header img {
+        width: 18%;
+    }
 
-    /***firs step of registration***/
+    .container-header img:nth-last-of-type(1){
+        width: 30%;
+    }
+
+
+/***firs step of registration***/
     
     .registration {
         width:80%;
         padding: 64px 24px 32px 24px;
     }
     
-    .h2-grey-1 {
+    .h1-grey-1 {
         font-size: 100px;
         line-height: 101px;
         padding-left: 95px;
     }
     
-    .h2-grey-2 {
+    .h1-grey-2 {
         padding-bottom: 30px;
     }
     
@@ -817,9 +921,34 @@ a {
         width: 65%;
         padding: 50px;
     }
+
+    label {
+        font-size: 18px;
+        padding-top: 22px;
+        padding-bottom: 18px;
+    }
+
+    .input-div input {
+        height: 65px;
+        font-size: 22px;
+    }
     
     .input-div img {
         left: 65%;
+        width: 4.5%;
+    }
+
+    .password-requirements {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 22px;
     }
     
     .container-btn {
@@ -828,7 +957,8 @@ a {
     
     .container-btn button {
         width: 50%;
-        padding: 20px 40px;
+        padding: 30px 40px;
+        font-size: 22px;;
     }
     
     /***second step of registration***/
@@ -836,23 +966,137 @@ a {
     .input-div-check a {
         padding: 0px;
     }
-    
+
     /***third step of registration***/
     
     .success-message {
-        width: 90%;
-        padding-top: 140px;
+        padding-top: 250px;
     }
 
-    .success-message h2 {
-        padding-left: 0px;
+    .success-message h1 {
+        padding-bottom: 60px;
     }
     
-    .h4-email {
-        width: 85%;
+    .h3-email {
+        font-size: 22px;
+        line-height: 35px;
+        padding-left: 50px;
     }
       
     .container-btn-2 button {
-        width: 45%;
+        width: 35%;
+        font-size: 22px;
     }
 }
+
+/****Extra large screens, TV 2****/
+@media (min-width:1681px) {
+
+    .container-page {
+        width: 100%;
+    }
+
+    .container-header {
+        padding: 25px 48px;
+    }
+
+    .container-header img {
+        width: 18%;
+    }
+
+    .container-header img:nth-last-of-type(1){
+        width: 30%;
+    }
+
+
+/***firs step of registration***/
+    
+    .registration {
+        width:80%;
+        padding: 4px 24px 32px 24px;
+    }
+    
+    .h1-grey-1 {
+        font-size: 100px;
+        line-height: 101px;
+        padding-left: 5px;
+        text-align: center;
+    }
+    
+    .h1-grey-2 {
+        padding-bottom: 30px;
+    }
+    
+    .form {
+        width: 65%;
+        padding: 50px;
+    }
+
+    label {
+        font-size: 18px;
+        padding-top: 22px;
+        padding-bottom: 18px;
+    }
+
+    .input-div input {
+        height: 65px;
+        font-size: 22px;
+    }
+    
+    .input-div img {
+        left: 65%;
+        width: 4.5%;
+    }
+
+    .password-requirements {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 22px;
+    }
+    
+    .container-btn {
+        align-items: center;
+    }
+    
+    .container-btn button {
+        width: 50%;
+        padding: 30px 40px;
+        font-size: 22px;;
+    }
+    
+    /***second step of registration***/
+
+    .input-div-check a {
+        padding: 0px;
+    }
+
+    /***third step of registration***/
+    
+    .success-message {
+        padding-top: 250px;
+    }
+
+    .success-message h1 {
+        padding-bottom: 60px;
+    }
+    
+    .h3-email {
+        font-size: 22px;
+        line-height: 35px;
+        padding-left: 50px;
+    }
+      
+    .container-btn-2 button {
+        width: 35%;
+        font-size: 22px;
+    }
+}
+
+
