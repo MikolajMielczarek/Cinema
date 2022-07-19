@@ -1,6 +1,3 @@
-//It was the fastes way for me to use only JS not react because I am reapiting all material from JS (courses, notes and projects) and the next one is react - now is Monday(11.07) late night and I will try to solve all with react too, hope to until Wednesday(13.07 03:00pm) I will manage to send also react app.
-//I have the last days in my current job (last day 15.07) and I have to delegate all of duties, so I am not sure if I can do it until then, hope that the solution below will be sufficient in case I would not manage :)
-
 //containers for steps
 const containerFirstReg = document.querySelector(".first-step");
 const containerSecondReg = document.querySelector(".second-step");
@@ -141,19 +138,31 @@ inputName.addEventListener("keyup", () => {
     changeName(name);
 })
 
+//date input color
+const inputDateColor = () => {
+    if (inputDate.value === '') {
+        inputDate.classList.add("input-date");
+    } else {
+        inputDate.classList.remove("input-date");
+    }
+}
+
+
 //validation for birthday date
 const overEighteen = dayOfBirth => {
     const eighteenAgo = new Date();
     eighteenAgo.setFullYear(eighteenAgo.getFullYear() - 18);
     if (dayOfBirth <= eighteenAgo) {
         secondSubBtn.removeAttribute("disabled","");
+        inputDate.style.color = "#343541";
     }else{
-        alert("You should be minimum 18 years old - because of that register button is disabled");
+        inputDate.style.color = "red";
     }
 }
 
 //checking the age
 inputDate.onchange = (e) => {
+    inputDateColor();
     secondSubBtn.setAttribute("disabled","");
     const dayOfBirth = new Date(e.target.value);
     overEighteen(dayOfBirth);
