@@ -2,7 +2,7 @@
 
 /*As I know only I am working on that project I use very "fitting" names for all classes*/
 
-/*I add some responsive for more than projecting 3 screens to to avoid mistakes as much as possible during checking the responsiveness of the application*/
+/*I add some responsive for more than projecting 3 screens to avoid mistakes as much as possible during checking the responsiveness of the application*/
 
 * {
     margin: 0;
@@ -84,38 +84,48 @@ label {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: #F7F7F7;
+    background-color: #F7F7F7;
+    border-radius: 8px;
 }
+
+::placeholder {
+    color: #85868D;
+    opacity: 1; /* Firefox */
+  }
 
 .input-div input {
     height: 55px;
     width: 100%;
-    border-radius: 8px;
     font-size: 18px;
-    background: #F7F7F7;
-    color:#85868D;
-    border-style: unset;
+    background-color: #F7F7F7;
+    border-style: solid;
+    border-color: #F7F7F7;
+    border-width: 2px;
+    border-radius: 8px;
+    color:#343541;
     padding: 24px;
 }
 
 .input-div input:hover {
-    background: #E5E5E5;
+    background-color: #E5E5E5;
+    border-color: #E5E5E5;
 }
 
 .input-div input:focus {
-    background-color: rgba(47, 128, 237, 0.1);
-    outline: 2px solid #2F80ED;
+    outline: none !important;
+    border-color: #2F80ED;
 }
 
-.input-red-border-focus input:focus {
-    outline: 2px solid #EC1115;
-}
-
-.input-div img {
+.input-div button {
     position: absolute;
-    left: 63%;
-    padding-right: 25px;
-    z-index: 1;
+    right: 15%;
+    background-image: url("assets/eye.svg");
+    background-position: center;
+    background-color:rgba(0, 0, 0, 0.0);
+    width:30px;
+    height: 22px;
+    border-style: none;
+    cursor: pointer;
 }
 
 .password-requirements {
@@ -281,11 +291,10 @@ a {
     display: none;
 }
 
-
 /********media queries********/
 
 /****Mobile devices****/
-
+/*
 @media (max-width:350px) {
 
     .container-page {
@@ -303,7 +312,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+    /*
     .registration {
         width:100%;
         padding: 24px 24px 22px 24px;
@@ -351,13 +360,13 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .input-div-check a {
         padding: 0px;
     }
     
     /***third step of registration***/
-    
+/*
     .success-message {
         padding-top: 30px;
     }
@@ -404,7 +413,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+/*  
     .registration {
         width:110%;
         height: 678px;
@@ -452,7 +461,7 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .second-step {
         height: auto;
     }
@@ -466,7 +475,7 @@ a {
     }
 
     /***third step of registration***/
-
+/*
     .success-message {
         padding-top: 140px;
         height: auto;
@@ -498,7 +507,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+/*  
     .registration {
         width:110%;
         height: 678px;
@@ -546,7 +555,7 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .second-step {
         height: auto;
     }
@@ -560,7 +569,7 @@ a {
     }
 
     /***third step of registration***/
-
+/*
     .success-message {
         padding-top: 140px;
         height: auto;
@@ -576,7 +585,7 @@ a {
 }
 
 /****iPads, Tablets****/
-
+/*
 @media (min-width:481px) and (max-width:768px) {
     
     .container-page {
@@ -594,7 +603,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+    /*
     .registration {
         width:100%;
         padding: 64px 24px 32px 24px;
@@ -634,13 +643,13 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .input-div-check a {
         padding: 0px;
     }
     
     /***third step of registration***/
-    
+  /*  
     .success-message {
         padding-top: 140px;
     }
@@ -655,7 +664,7 @@ a {
 }
 
 /****Small screens, laptops 1****/
-
+/*
 @media (min-width:769px) and (max-width:912px) {
 
     .container-page {
@@ -667,7 +676,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+  /*  
     .registration {
         width:100%;
         padding: 64px 24px 32px 24px;
@@ -702,13 +711,13 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .input-div-check a {
         padding: 0px;
     }
     
     /***third step of registration***/
-    
+  /*  
     .success-message {
         width: 90%;
         padding-top: 140px;
@@ -733,14 +742,14 @@ a {
 }
 
 /****Small screens, laptops 2****/
-
+/*
 @media (min-width:913px) and (max-width:1024px) { 
     .container-page {
         width: 100%;
     }
     
     /***firs step of registration***/
-    
+   /* 
     .registration {
         width:100%;
         padding: 64px 24px 32px 24px;
@@ -775,7 +784,7 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .second-step h1:nth-child(1){
         padding-top: 50px;
     }
@@ -785,7 +794,7 @@ a {
     }
     
     /***third step of registration***/
-    
+   /* 
     .success-message {
         width: 90%;
         padding-top: 340px;
@@ -805,7 +814,7 @@ a {
 }
 
 /****Desktops, large screens****/
-
+/*
 @media (min-width:1025px) and (max-width:1400px) {
 
     .container-page {
@@ -813,7 +822,7 @@ a {
     }
     
     /***firs step of registration***/
-    
+   /* 
     .registration {
         width:90%;
         padding: 64px 24px 32px 24px;
@@ -848,7 +857,7 @@ a {
     }
     
     /***second step of registration***/
-    
+    /*
     .second-step h1:nth-child(1){
         padding-top: 50px;
     }
@@ -858,7 +867,7 @@ a {
     }
     
     /***third step of registration***/
-    
+   /* 
     .success-message {
         width: 90%;
         padding-top: 350px;
@@ -881,6 +890,7 @@ a {
 /*****main designe for 1440px****/
 
 /****Extra large screens, TV 1****/
+/*
 @media (min-width:1536px) and (max-width:1680px) {
 
     .container-page {
@@ -901,7 +911,7 @@ a {
 
 
 /***firs step of registration***/
-    
+    /*
     .registration {
         width:80%;
         padding: 64px 24px 32px 24px;
@@ -962,13 +972,13 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .input-div-check a {
         padding: 0px;
     }
 
     /***third step of registration***/
-    
+    /*
     .success-message {
         padding-top: 250px;
     }
@@ -990,6 +1000,7 @@ a {
 }
 
 /****Extra large screens, TV 2****/
+/*
 @media (min-width:1681px) {
 
     .container-page {
@@ -1010,7 +1021,7 @@ a {
 
 
 /***firs step of registration***/
-    
+   /* 
     .registration {
         width:80%;
         padding: 4px 24px 32px 24px;
@@ -1072,13 +1083,13 @@ a {
     }
     
     /***second step of registration***/
-
+/*
     .input-div-check a {
         padding: 0px;
     }
 
     /***third step of registration***/
-    
+   /* 
     .success-message {
         padding-top: 250px;
     }

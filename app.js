@@ -11,7 +11,7 @@ const formFirst = document.querySelector(".first-form")
 const formSecond = document.querySelector(".second-form")
 
 //img to show password
-const imgPass = document.querySelector(".first-step img")
+const btnPass = document.querySelector(".input-div button")
 
 //inputs
 const inputPass = document.querySelector(".input-password")
@@ -34,10 +34,10 @@ const lastBtn = document.querySelector(".last-btn")
 const h1Name = document.querySelector(".h1-name")
 const h3Email = document.querySelector(".h3-email")
 
-
+//const for colors inputs - borders - buttons
 
 //adding event listener with function to see password input
-imgPass.addEventListener("click", () => {
+btnPass.addEventListener("click", () => {
     if (inputPass.type === "password"){
         inputPass.type = "text";
     } else {
@@ -45,33 +45,62 @@ imgPass.addEventListener("click", () => {
     }
 })
 
+const onFocus = () => {
+    if(firstReq.style.color != "red" && secondReq.style.color != "red" && thirdReq.style.color != "red") {
+        inputPass.style.borderColor = "#2F80ED";
+        }
+}
+
+const outFocus = () => {
+    if(firstReq.style.color != "red" && secondReq.style.color != "red" && thirdReq.style.color != "red")
+    {
+    inputPass.style.borderColor = "#F7F7F7";
+    }
+}
+
+
 //checking that all three password requirements are met and inputs are filled 
 const checkingPassword = pass => {
     firstSubBtn.setAttribute("disabled","")
+    
     //first condition - at least 8 characters
     if (pass.length >= 8){
         firstReq.style.color = "green";
-    }else{
+    }else if (pass.length === 0){
+        firstReq.style.color = "#343541";
+    } 
+     else {
         firstReq.style.color = "red";
+        inputPass.style.borderColor = "#EC1115";
     }
     //second condition - at least one letter
     const letter = /[a-zA-Z]/g;
     if (letter.test(pass)){
         secondReq.style.color = "green";
+    }else if(pass.length === 0){
+        secondReq.style.color = "#343541";
     }else{
         secondReq.style.color = "red";
+        inputPass.style.borderColor = "#EC1115";
     }
-    //second condition - at least one digit
+    //third condition - at least one digit
     const digit = /[0-9]/g;
     if (digit.test(pass)){
         thirdReq.style.color = "green";
+    }else if(pass.length === 0){
+        thirdReq.style.color = "#343541";
     }else{
         thirdReq.style.color = "red";
+        inputPass.style.borderColor = "#EC1115";
     }
     //if all of 3 are ok!
     if(firstReq.style.color === "green" && secondReq.style.color === "green" && thirdReq.style.color === "green") {
         firstSubBtn.removeAttribute("disabled","");
-        inputPass.style.outline = "0px"
+        inputPass.style.borderColor = "#2F80ED";
+    }
+
+    if(pass.length === 0){
+        inputPass.style.borderColor = "#2F80ED";
     }
 }
 
@@ -79,6 +108,7 @@ const checkingPassword = pass => {
 inputPass.addEventListener("keyup", () => {
     const pass = inputPass.value.trim();
     checkingPassword(pass);
+    console.log(secondReq.style.color)
 });
 
 //change email in the last message

@@ -35,9 +35,9 @@
                         <input class="input-email" type="email" placeholder="Something ending with monterail.com" required>
                     </div>
                     <label>password</label>
-                    <div class="input-div input-red-border-focus">
-                        <input class="input-password" type="password" placeholder="Enter your password" required>
-                        <img src="assets/eye.svg" alt="eye to see password">
+                    <div class="input-div">
+                            <input class="input-password" type="password" placeholder="Enter your password" onfocus="onFocus()" onfocusout="outFocus()" required>
+                            <button type="button"></button>
                     </div>
                     <div class="password-requirements">
                         <h2 class="first-req">At least 8 characters</h2>
@@ -98,6 +98,7 @@
 
             </div>
         </div>
+
     <script src="app.js"></script>
 </body>
 </html>
