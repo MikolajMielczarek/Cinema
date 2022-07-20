@@ -461,7 +461,7 @@ a {
 @media (min-width:351px) and (max-width:414px) {
 
     .container-page {
-        width: 375px;
+        width: 100%;
         padding: 0px 0px 80px 0px;
     }
 
@@ -477,18 +477,18 @@ a {
     /***firs step of registration***/
   
     .registration {
-        width:110%;
+        width:100%;
         height: 678px;
-        padding: 64px 24px 32px 24px;
+        padding: 64px 14px 32px 14px;
     }
     
     .h1-grey-1 {
-        width: var(--width-100);
+        width: 100%;
         font-size: 40px;
         line-height: 41px;
         text-align: center;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 14px;
+        padding-right: 14px;
     }
     
     .h1-grey-2 {
@@ -551,7 +551,7 @@ a {
 @media (min-width:415px) and (max-width:480px) {
 
     .container-page {
-        width: 375px;
+        width: var(--width-100);
         padding: 0px 0px 80px 0px;
     }
 
@@ -567,7 +567,7 @@ a {
     /***firs step of registration***/
 
     .registration {
-        width:110%;
+        width: var(--width-100);
         height: 678px;
         padding: 64px 24px 32px 24px;
     }
