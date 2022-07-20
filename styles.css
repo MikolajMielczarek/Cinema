@@ -458,7 +458,7 @@ a {
 
 }
 
-@media (max-width:414px) {
+@media (min-width:351px) and (max-width:414px) {
 
     .container-page {
         width: 100%;
@@ -548,7 +548,7 @@ a {
     }
 }
 
-@media (max-width:480px) {
+@media (min-width:415px) and (max-width:480px) {
 
     .container-page {
         width: var(--width-100);
@@ -640,7 +640,7 @@ a {
 
 /****iPads, Tablets****/
 
-@media (max-width:768px) {
+@media (min-width:481px) and (max-width:768px) {
     
     .container-page {
         width: var(--width-100);
@@ -715,7 +715,7 @@ a {
 
 /****Small screens, laptops 1****/
 
-@media (max-width:912px) {
+@media (min-width:769px) and (max-width:912px) {
 
     .container-page {
         width: var(--width-100);
@@ -789,7 +789,7 @@ a {
 
 /****Small screens, laptops 2****/
 
-@media (max-width:1024px) { 
+@media (min-width:913px) and (max-width:1024px) { 
     .container-page {
         width: var(--width-100);
     }
@@ -857,7 +857,7 @@ a {
 
 /****Desktops, large screens****/
 
-@media (max-width:1400px) {
+@media (min-width:1025px) and (max-width:1400px) {
 
     .container-page {
         width: var(--width-100);
@@ -924,12 +924,14 @@ a {
     }
 }
 
-/****Large screens, TV****/
+
+    /****Large screens, TV****/
 /*****main designe for 1440px****/
+
 
 /****Extra large screens, TV 1****/
 
-@media (max-width:1680px) {
+@media (min-width:1536px) and (max-width:1680px) {
 
     .container-page {
         width: var(--width-100);
