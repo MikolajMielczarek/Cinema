@@ -31,7 +31,17 @@ const lastBtn = document.querySelector(".last-btn")
 const h1Name = document.querySelector(".h1-name")
 const h3Email = document.querySelector(".h3-email")
 
-//const for colors inputs - borders - buttons
+//const for colors inputs - borders - buttons - req
+
+const red1 = "#EC1115";
+const red2 = "#A60C0E";
+const red3 = "#F47073";
+const gray1 = "#F7F7F7";
+const gray2 = "#85868D";
+const gray3 = "#343541";
+const blue = "#2F80ED";
+const green = "green"
+const red = "red"
 
 //adding event listener with function to see password input
 btnPass.addEventListener("click", () => {
@@ -43,15 +53,15 @@ btnPass.addEventListener("click", () => {
 })
 
 const onFocus = () => {
-    if(firstReq.style.color != "red" && secondReq.style.color != "red" && thirdReq.style.color != "red") {
-        inputPass.style.borderColor = "#2F80ED";
+    if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red) {
+        inputPass.style.borderColor = blue;
         }
 }
 
 const outFocus = () => {
-    if(firstReq.style.color != "red" && secondReq.style.color != "red" && thirdReq.style.color != "red")
+    if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red)
     {
-    inputPass.style.borderColor = "#F7F7F7";
+    inputPass.style.borderColor = gray1;
     }
 }
 
@@ -62,42 +72,42 @@ const checkingPassword = pass => {
     
     //first condition - at least 8 characters
     if (pass.length >= 8){
-        firstReq.style.color = "green";
+        firstReq.style.color = green;
     }else if (pass.length === 0){
-        firstReq.style.color = "#343541";
+        firstReq.style.color = gray3;
     } 
      else {
-        firstReq.style.color = "red";
-        inputPass.style.borderColor = "#EC1115";
+        firstReq.style.color = red;
+        inputPass.style.borderColor = red1;
     }
     //second condition - at least one letter
     const letter = /[a-zA-Z]/g;
     if (letter.test(pass)){
-        secondReq.style.color = "green";
+        secondReq.style.color = green;
     }else if(pass.length === 0){
-        secondReq.style.color = "#343541";
+        secondReq.style.color = gray3;
     }else{
-        secondReq.style.color = "red";
-        inputPass.style.borderColor = "#EC1115";
+        secondReq.style.color = red;
+        inputPass.style.borderColor = red1;
     }
     //third condition - at least one digit
     const digit = /[0-9]/g;
     if (digit.test(pass)){
-        thirdReq.style.color = "green";
+        thirdReq.style.color = green;
     }else if(pass.length === 0){
-        thirdReq.style.color = "#343541";
+        thirdReq.style.color = gray3;
     }else{
-        thirdReq.style.color = "red";
-        inputPass.style.borderColor = "#EC1115";
+        thirdReq.style.color = red;
+        inputPass.style.borderColor = red1;
     }
     //if all of 3 are ok!
-    if(firstReq.style.color === "green" && secondReq.style.color === "green" && thirdReq.style.color === "green") {
+    if(firstReq.style.color === green && secondReq.style.color === green && thirdReq.style.color === green) {
         firstSubBtn.removeAttribute("disabled","");
-        inputPass.style.borderColor = "#2F80ED";
+        inputPass.style.borderColor = blue;
     }
 
     if(pass.length === 0){
-        inputPass.style.borderColor = "#2F80ED";
+        inputPass.style.borderColor = blue;
     }
 }
 
@@ -105,7 +115,6 @@ const checkingPassword = pass => {
 inputPass.addEventListener("keyup", () => {
     const pass = inputPass.value.trim();
     checkingPassword(pass);
-    console.log(secondReq.style.color)
 });
 
 //change email in the last message
@@ -154,9 +163,9 @@ const overEighteen = dayOfBirth => {
     eighteenAgo.setFullYear(eighteenAgo.getFullYear() - 18);
     if (dayOfBirth <= eighteenAgo) {
         secondSubBtn.removeAttribute("disabled","");
-        inputDate.style.color = "#343541";
+        inputDate.style.color = gray3;
     }else{
-        inputDate.style.color = "red";
+        inputDate.style.color = red;
     }
 }
 
@@ -185,7 +194,7 @@ lastBtn.addEventListener('click', (e) => {
     inputLastName.value = "";
     inputCheck.checked = false;
     inputDate.value = null;
-    firstReq.style.color = "red";
-    secondReq.style.color = "red";
-    thirdReq.style.color = "red";
+    firstReq.style.color = red;
+    secondReq.style.color = red;
+    thirdReq.style.color = red;
 })

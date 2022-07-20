@@ -216,7 +216,7 @@ a {
     font-size: var(--font-size-18);
     line-height: 100%;
     letter-spacing: 0.015em;
-    color: var(--red-1);
+    color: var(--red-1-normal);
     text-decoration: none;
 }
 
