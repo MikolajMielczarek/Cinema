@@ -23,7 +23,7 @@
                 
             </div>
 
-            <div class="registration first-step">
+            <div class="registration first-step display">
                 
                 <h1 class="h1-grey-1">Ahoy you!</h1>
                 <h1 class="h1-grey-2 h1-grey-1">Care to register?</h1>
@@ -32,12 +32,16 @@
 
                     <label>email</label>
                     <div class="input-div">
-                        <input class="input-email" type="email" placeholder="Something ending with monterail.com" required>
+                        <input class="input-email" type="email"
+                        placeholder="Something ending with monterail.com"
+                        onfocus="onFocusEmail()"
+                        onfocusout="outFocusEmail()"
+                        required>
                     </div>
                     <label>password</label>
                     <div class="input-div">
                         <div class="container-btn-pass">
-                            <input class="input-password" type="password" placeholder="Enter your password" onfocus="onFocus()" onfocusout="outFocus()" required>
+                            <input class="input-password" type="password" placeholder="Enter your password" onfocus="onFocusPass()" onfocusout="outFocusPass()" required>
                             <button type="button"></button>
                         </div>
                     </div>
@@ -53,7 +57,7 @@
                 </form>
             </div>
 
-            <div class="registration second-step display">
+            <div class="registration second-step">
                 
                     <h1 class="h1-grey-1">Great!</h1>
                     <h1 class="h1-grey-2 h1-grey-1">Now your name</h1>
@@ -63,15 +67,21 @@
 
                     <label>first name</label>
                     <div class="input-div">
-                        <input class="input-name" type="text" placeholder="e.g. Jessica" required>
+                        <input class="input-name" type="text" placeholder="e.g. Jessica"
+                        onfocus="onFocusFirstName()" onfocusout="outFocusFirstName()"
+                         required>
                     </div>
                     <label>last name</label>
                     <div class="input-div">
-                        <input class="input-last-name" type="text" placeholder="e.g. Walton" required>
+                        <input class="input-last-name" type="text" placeholder="e.g. Walton"
+                        onfocus="onFocusLastName()" onfocusout="outFocusLastName()"
+                        required>
                     </div>
                     <label>date of birth</label>
                     <div class="input-div">
-                        <input class="input-date" type="date" required>
+                        <input class="input-date" type="date"
+                        onfocus="onFocusDate()" onfocusout="outFocusDate()"
+                        required>
                     </div>
                     <h2 class="password-requirements">You should be minium 18 years old</h2>
                     <div class="input-div-check">

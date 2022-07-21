@@ -13,7 +13,7 @@ const btnPass = document.querySelector(".input-div button")
 //inputs
 const inputPass = document.querySelector(".input-password")
 const inputEmail = document.querySelector(".input-email")
-const inputName = document.querySelector(".input-name")
+const inputFirstName = document.querySelector(".input-name")
 const inputLastName = document.querySelector(".input-last-name")
 const inputDate = document.querySelector(".input-date")
 const inputCheck = document.querySelector(".input-check")
@@ -43,6 +43,63 @@ const blue = "#2F80ED";
 const green = "green"
 const red = "red"
 
+////////all actions for email input
+
+//checking requirement for email
+
+const onFocusEmail = () => {
+    if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
+        inputEmail.style.borderColor = blue;
+    }
+}
+
+const outFocusEmail = () => {
+    if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
+        inputEmail.style.borderColor = gray1;
+    } else if(inputEmail.name === "reqNoForInput") {
+        alert('Email have to: 1) End with monterail.com 2) Contain @ 3) Have some value before @')
+    }
+}
+
+const checkingEmail = email => {
+    //at the end need to have "monterail.com"
+    firstSubBtn.setAttribute("disabled","")
+
+    const emailCondition = /monterail.com$/gi;
+    const emailMonky = /[@]/g;
+    const emailStart = /.+@/g;
+
+    if(emailStart.test(email) && emailMonky.test(email) && emailCondition.test(email)){
+        inputEmail.style.borderColor = blue;
+        inputEmail.name = "reqForInput";
+        if(firstReq.style.color === green && secondReq.style.color === green && thirdReq.style.color === green){
+        firstSubBtn.removeAttribute("disabled","");}
+    }else{
+        inputEmail.style.borderColor = red1;
+        inputEmail.name = "reqNoForInput";
+    }
+
+    if(email.length === 0){
+        inputEmail.style.borderColor = blue;
+        inputEmail.name = "noLengthForInput";
+    }
+}
+
+//change email in the last message
+const changeEmail = email => {
+    h3Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
+    Make sure to click the link from the message to activate your account.`
+}
+
+//save the value of email
+inputEmail.addEventListener("keyup", () => {
+    const email = inputEmail.value.trim();
+    checkingEmail(email)
+    changeEmail(email);
+})
+
+////////all actions for password input
+
 //adding event listener with function to see password input
 btnPass.addEventListener("click", () => {
     if (inputPass.type === "password"){
@@ -52,13 +109,15 @@ btnPass.addEventListener("click", () => {
     }
 })
 
-const onFocus = () => {
+//checking req for border color onfocus and outfocus
+
+const onFocusPass = () => {
     if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red) {
         inputPass.style.borderColor = blue;
         }
 }
 
-const outFocus = () => {
+const outFocusPass = () => {
     if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red)
     {
     inputPass.style.borderColor = gray1;
@@ -100,9 +159,11 @@ const checkingPassword = pass => {
         thirdReq.style.color = red;
         inputPass.style.borderColor = red1;
     }
+
     //if all of 3 are ok!
     if(firstReq.style.color === green && secondReq.style.color === green && thirdReq.style.color === green) {
-        firstSubBtn.removeAttribute("disabled","");
+        if(inputEmail.name = "reqForInput"){
+        firstSubBtn.removeAttribute("disabled","");}
         inputPass.style.borderColor = blue;
     }
 
@@ -117,18 +178,6 @@ inputPass.addEventListener("keyup", () => {
     checkingPassword(pass);
 });
 
-//change email in the last message
-const changeEmail = email => {
-    h3Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
-    Make sure to click the link from the message to activate your account.`
-}
-
-//save the value of email
-inputEmail.addEventListener("keyup", () => {
-    const email = inputEmail.value.trim();
-    changeEmail(email);
-})
-
 //submit for first step
 formFirst.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -136,42 +185,129 @@ formFirst.addEventListener('submit', (e) => {
     containerSecondReg.classList.remove("display");
 })
 
-//change name in last message
-const changeName = name => {
-    h1Name.textContent = `Good job ${name}!`
-}
+////////all actions for first name input
 
-//save the value of name
-inputName.addEventListener("keyup", () => {
-    const name = inputName.value.trim();
-    changeName(name);
-})
+//checking requirement for name
 
-//date input color
-const inputDateColor = () => {
-    if (inputDate.value === '') {
-        inputDate.classList.add("input-date");
-    } else {
-        inputDate.classList.remove("input-date");
+const onFocusFirstName = () => {
+    if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput") {
+        inputFirstName.style.borderColor = blue;
     }
 }
 
+const outFocusFirstName = () => {
+    if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput") {
+        inputFirstName.style.borderColor = gray1;
+    }
+}
+
+const checkingFirstName = firstName => {
+    secondSubBtn.setAttribute("disabled","")
+
+    if(firstName != "" && (firstName[0].toUpperCase() === firstName[0]) && (firstName.length >= 2)) {
+        inputFirstName.style.borderColor = blue;
+        inputFirstName.name = "reqForInput";
+        if(inputLastName.name = "reqForInput" && inputDate.name === "reqForInput"){
+            secondSubBtn.removeAttribute("disabled","")
+        }
+    } else if(firstName.length === 0){
+        inputFirstName.style.borderColor = blue;
+        inputFirstName.name = "noLengthForInput"
+    } else {
+        inputFirstName.style.borderColor = red;
+        inputFirstName.name = "reqNoForInput";
+    }
+}
+
+//change name in last message
+const changeFirstName = firstName => {
+    h1Name.textContent = `Good job ${firstName}!`
+}
+
+//save the value of name
+inputFirstName.addEventListener("keyup", () => {
+    const firstName = inputFirstName.value.trim();
+    changeFirstName(firstName);
+    checkingFirstName(firstName);
+})
+
+////////all actions for last name input
+
+//checking requirement for last name
+
+const onFocusLastName = () => {
+    if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput") {
+        inputLastName.style.borderColor = blue;
+    }
+}
+
+const outFocusLastName = () => {
+    if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput") {
+        inputLastName.style.borderColor = gray1;
+    }
+}
+
+const checkingLastName = lastName => {
+    secondSubBtn.setAttribute("disabled","");
+    if(lastName != "" && (lastName[0].toUpperCase() === lastName[0]) && (lastName.length >= 2)) {
+        inputLastName.style.borderColor = blue;
+        inputLastName.name = "reqForInput";
+        if(inputFirstName.name === "reqForInput" && inputDate.name === "reqForInput"){
+            secondSubBtn.removeAttribute("disabled","")
+        }
+    } else if(lastName.length === 0){
+        inputLastName.style.borderColor = blue;
+        inputLastName.name = "noLengthForInput"
+    } else {
+        inputLastName.style.borderColor = red;
+        inputLastName.name = "reqNoForInput";
+    }
+}
+//save the value of name
+inputLastName.addEventListener("keyup", () => {
+    const lastName = inputLastName.value.trim();
+    checkingLastName(lastName);
+})
+
+////////all actions for date input
+
+//checking requirement for date
+
+const onFocusDate = () => {
+    if(inputDate.name === "reqForInput") {
+        inputDate.style.borderColor = blue;
+    }
+}
+
+const outFocusDate = () => {
+    if(inputDate.name === "reqForInput" || inputDate.name === "noLengthForInput") {
+        inputDate.style.borderColor = gray1;
+    }
+    if(inputDate.name === "reqNoForInput"){
+        inputDate.style.borderColor = red1;
+        inputDate.style.color = gray3;
+    }
+}
 
 //validation for birthday date
 const overEighteen = dayOfBirth => {
     const eighteenAgo = new Date();
     eighteenAgo.setFullYear(eighteenAgo.getFullYear() - 18);
     if (dayOfBirth <= eighteenAgo) {
-        secondSubBtn.removeAttribute("disabled","");
         inputDate.style.color = gray3;
+        inputDate.style.borderColor = blue;
+        inputDate.name = "reqForInput";
+        if(inputFirstName.name === "reqForInput" && inputLastName.name === "reqForInput"){
+            secondSubBtn.removeAttribute("disabled","")
+        }
     }else{
-        inputDate.style.color = red;
+        inputDate.style.borderColor = red1;
+        inputDate.name = "reqNoForInput";
     }
 }
 
 //checking the age
 inputDate.onchange = (e) => {
-    inputDateColor();
     secondSubBtn.setAttribute("disabled","");
     const dayOfBirth = new Date(e.target.value);
     overEighteen(dayOfBirth);
@@ -190,7 +326,7 @@ lastBtn.addEventListener('click', (e) => {
     containerFirstReg.classList.remove("display");
     inputEmail.value = "";
     inputPass.value = "";
-    inputName.value = "";
+    inputFirstName.value = "";
     inputLastName.value = "";
     inputCheck.checked = false;
     inputDate.value = null;
