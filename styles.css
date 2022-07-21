@@ -245,15 +245,10 @@ a {
     border-color:var(--red-2-hover);
 }
 
-.first-step-sub-btn:active {
+.container-btn button:active {
     border: 5px solid var(--red-4-border-active);
+    background: var(--red-2-hover);
 }
-
-.second-step-sub-btn:active {
-    border: 5px solid var(--red-4-border-active);
-}
-
-
 
 /***second step of registration***/
 
