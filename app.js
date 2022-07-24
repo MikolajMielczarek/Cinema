@@ -1,38 +1,36 @@
 //containers for steps
 const containerFirstReg = document.querySelector(".first-step");
 const containerSecondReg = document.querySelector(".second-step");
-const containerSucces = document.querySelector(".success-message")
+const containerSucces = document.querySelector(".success-message");
 
 //forms
-const formFirst = document.querySelector(".first-form")
-const formSecond = document.querySelector(".second-form")
+const firstFormRegistration = document.querySelector(".first-form");
+const secondFormRegistration = document.querySelector(".second-form");
 
 //img to show password
-const btnPass = document.querySelector(".input-div button")
+const buttonSeeHidePassword = document.querySelector(".registration__inputdiv button");
 
 //inputs
-const inputPass = document.querySelector(".input-password")
-const inputEmail = document.querySelector(".input-email")
-const inputFirstName = document.querySelector(".input-name")
-const inputLastName = document.querySelector(".input-last-name")
-const inputDate = document.querySelector(".input-date")
-const inputCheck = document.querySelector(".input-check")
-
-const firstReq = document.querySelector(".first-req")
-const secondReq = document.querySelector(".second-req")
-const thirdReq = document.querySelector(".third-req")
+const inputPassword = document.querySelector(".registration__inputdiv--input-password");
+const inputEmail = document.querySelector(".registration__inputdiv--input-email");
+const inputFirstName = document.querySelector(".registration__inputdiv--input-first-name");
+const inputLastName = document.querySelector(".registration__inputdiv--input-last-name");
+const inputDate = document.querySelector(".registration__inputdiv--input-date");
+const inputCheckPrivacyPolicy = document.querySelector(".registration__inputdiv--input-check");
 
 //buttons
-const firstSubBtn = document.querySelector(".first-step-sub-btn")
-const secondSubBtn = document.querySelector(".second-step-sub-btn")
-const lastBtn = document.querySelector(".last-btn")
+const firstStepSubmitButton = document.querySelector(".registration__buttons__button1");
+const secondStepSubmitButton = document.querySelector(".egistration__buttons__button");
+const lastStepSuccesButton = document.querySelector(".registration--succes-div-button--button");
 
-//h1 and h3 (h2 not needed)
-const h1Name = document.querySelector(".h1-name")
-const h3Email = document.querySelector(".h3-email")
+//h1, h2 and h3
+const h1Name = document.querySelector(".registration__headings__succes");
+const firstRequirementHeader = document.querySelector(".registration--password-requirements--first-req");
+const secondRequirementHeader = document.querySelector(".registration--password-requirements--registration--password-requirements--second-req");
+const thirdRequirementHeader = document.querySelector(".registration--password-requirements--registration--password-requirements--third-req");
+const h3Email = document.querySelector(".registration--succesh3");
 
 //const for colors inputs - borders - buttons - req
-
 const red1 = "#EC1115";
 const red2 = "#A60C0E";
 const red3 = "#F47073";
@@ -45,35 +43,34 @@ const red = "red"
 
 ////////all actions for email input
 
-//checking requirement for email
-
-const onFocusEmail = () => {
+const onFocusEmailInput = () => {
     if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
         inputEmail.style.borderColor = blue;
     }
 }
 
-const outFocusEmail = () => {
+const outFocusEmailInput = () => {
     if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
         inputEmail.style.borderColor = gray1;
     } else if(inputEmail.name === "reqNoForInput") {
-        alert('Email have to: 1) End with monterail.com 2) Contain @ 3) Have some value before @')
+        //alert('Email have to: 1) End with monterail.com 2) Contain @ 3) Have some value before @')
     }
 }
 
-const checkingEmail = email => {
+//checking requirement for email
+const checkEmailInputRequirements = email => {
     //at the end need to have "monterail.com"
-    firstSubBtn.setAttribute("disabled","")
+    firstStepSubmitButton.setAttribute("disabled","");
 
     const emailCondition = /monterail.com$/gi;
-    const emailMonky = /[@]/g;
+    const emailAt = /[@]/g;
     const emailStart = /.+@/g;
 
-    if(emailStart.test(email) && emailMonky.test(email) && emailCondition.test(email)){
+    if(emailStart.test(email) && emailAt.test(email) && emailCondition.test(email)){
         inputEmail.style.borderColor = blue;
         inputEmail.name = "reqForInput";
-        if(firstReq.style.color === green && secondReq.style.color === green && thirdReq.style.color === green){
-        firstSubBtn.removeAttribute("disabled","");}
+        if(firstRequirementHeader.style.color === green && secondRequirementHeader.style.color === green && thirdRequirementHeader.style.color === green){
+        firstStepSubmitButton.removeAttribute("disabled","");}
     }else{
         inputEmail.style.borderColor = red1;
         inputEmail.name = "reqNoForInput";
@@ -86,7 +83,7 @@ const checkingEmail = email => {
 }
 
 //change email in the last message
-const changeEmail = email => {
+const changeEmailInSuccesStep = email => {
     h3Email.innerHTML = `We have sent you an email to <span>${email}</span>.<br>
     Make sure to click the link from the message to activate your account.`
 }
@@ -94,100 +91,100 @@ const changeEmail = email => {
 //save the value of email
 inputEmail.addEventListener("keyup", () => {
     const email = inputEmail.value.trim();
-    checkingEmail(email)
-    changeEmail(email);
+    checkEmailInputRequirements(email);
+    changeEmailInSuccesStep(email);
+    
 })
 
 ////////all actions for password input
 
 //adding event listener with function to see password input
-btnPass.addEventListener("click", () => {
-    if (inputPass.type === "password"){
-        inputPass.type = "text";
+buttonSeeHidePassword.addEventListener("click", () => {
+    if (inputPassword.type === "password"){
+        inputPassword.type = "text";
     } else {
-        inputPass.type = "password";
+        inputPassword.type = "password";
     }
 })
 
 //checking req for border color onfocus and outfocus
-
-const onFocusPass = () => {
-    if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red) {
-        inputPass.style.borderColor = blue;
+const onFocusPasswordInput = () => {
+    if(firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red) 
+        {
+            inputPassword.style.borderColor = blue;
         }
 }
 
-const outFocusPass = () => {
-    if(firstReq.style.color != red && secondReq.style.color != red && thirdReq.style.color != red)
-    {
-    inputPass.style.borderColor = gray1;
-    }
+const outFocusPasswordInput = () => {
+    if(firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red)
+        {
+            inputPassword.style.borderColor = gray1;
+        }
 }
 
-
 //checking that all three password requirements are met and inputs are filled 
-const checkingPassword = pass => {
-    firstSubBtn.setAttribute("disabled","")
+const checkPasswordInput = password => {
+    firstStepSubmitButton.setAttribute("disabled","")
     
     //first condition - at least 8 characters
-    if (pass.length >= 8){
-        firstReq.style.color = green;
-    }else if (pass.length === 0){
-        firstReq.style.color = gray3;
+    if(password.length >= 8){
+        firstRequirementHeader.style.color = green;
+    }else if(password.length === 0){
+        firstRequirementHeader.style.color = gray3;
     } 
-     else {
-        firstReq.style.color = red;
-        inputPass.style.borderColor = red1;
+     else{
+        firstRequirementHeader.style.color = red;
+        inputPassword.style.borderColor = red1;
     }
+
     //second condition - at least one letter
     const letter = /[a-zA-Z]/g;
-    if (letter.test(pass)){
-        secondReq.style.color = green;
-    }else if(pass.length === 0){
-        secondReq.style.color = gray3;
+    if(letter.test(password)){
+        secondRequirementHeader.style.color = green;
+    }else if(password.length === 0){
+        secondRequirementHeader.style.color = gray3;
     }else{
-        secondReq.style.color = red;
-        inputPass.style.borderColor = red1;
+        secondRequirementHeader.style.color = red;
+        inputPassword.style.borderColor = red1;
     }
+
     //third condition - at least one digit
     const digit = /[0-9]/g;
-    if (digit.test(pass)){
-        thirdReq.style.color = green;
-    }else if(pass.length === 0){
-        thirdReq.style.color = gray3;
+    if (digit.test(password)){
+        thirdRequirementHeader.style.color = green;
+    }else if(password.length === 0){
+        thirdRequirementHeader.style.color = gray3;
     }else{
-        thirdReq.style.color = red;
-        inputPass.style.borderColor = red1;
+        thirdRequirementHeader.style.color = red;
+        inputPassword.style.borderColor = red1;
     }
 
-    //if all of 3 are ok!
-    if(firstReq.style.color === green && secondReq.style.color === green && thirdReq.style.color === green) {
+    //if all conditions are ok!
+    if(firstRequirementHeader.style.color === green && secondRequirementHeader.style.color === green && thirdRequirementHeader.style.color === green) {
         if(inputEmail.name = "reqForInput"){
-        firstSubBtn.removeAttribute("disabled","");}
-        inputPass.style.borderColor = blue;
+        firstStepSubmitButton.removeAttribute("disabled","");}
+        inputPassword.style.borderColor = blue;
     }
 
-    if(pass.length === 0){
-        inputPass.style.borderColor = blue;
+    if(password.length === 0){
+        inputPassword.style.borderColor = blue;
     }
 }
 
 //reading value of input and passing it to checkingPssword function
-inputPass.addEventListener("keyup", () => {
-    const pass = inputPass.value.trim();
-    checkingPassword(pass);
+inputPassword.addEventListener("keyup", () => {
+    const password = inputPassword.value.trim();
+    checkPasswordInput(password);
 });
 
 //submit for first step
-formFirst.addEventListener('submit', (e) => {
+firstFormRegistration.addEventListener('submit', (e) => {
     e.preventDefault();
     containerFirstReg.classList.add("display");
     containerSecondReg.classList.remove("display");
 })
 
 ////////all actions for first name input
-
-//checking requirement for name
 
 const onFocusFirstName = () => {
     if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput") {
@@ -201,14 +198,15 @@ const outFocusFirstName = () => {
     }
 }
 
+//checking requirement for name
 const checkingFirstName = firstName => {
-    secondSubBtn.setAttribute("disabled","")
+    secondStepSubmitButton.setAttribute("disabled","")
 
     if(firstName != "" && (firstName[0].toUpperCase() === firstName[0]) && (firstName.length >= 2)) {
         inputFirstName.style.borderColor = blue;
         inputFirstName.name = "reqForInput";
         if(inputLastName.name = "reqForInput" && inputDate.name === "reqForInput"){
-            secondSubBtn.removeAttribute("disabled","")
+            secondStepSubmitButton.removeAttribute("disabled","")
         }
     } else if(firstName.length === 0){
         inputFirstName.style.borderColor = blue;
@@ -233,8 +231,6 @@ inputFirstName.addEventListener("keyup", () => {
 
 ////////all actions for last name input
 
-//checking requirement for last name
-
 const onFocusLastName = () => {
     if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput") {
         inputLastName.style.borderColor = blue;
@@ -247,13 +243,14 @@ const outFocusLastName = () => {
     }
 }
 
+//checking requirement for last name
 const checkingLastName = lastName => {
-    secondSubBtn.setAttribute("disabled","");
+    secondStepSubmitButton.setAttribute("disabled","");
     if(lastName != "" && (lastName[0].toUpperCase() === lastName[0]) && (lastName.length >= 2)) {
         inputLastName.style.borderColor = blue;
         inputLastName.name = "reqForInput";
         if(inputFirstName.name === "reqForInput" && inputDate.name === "reqForInput"){
-            secondSubBtn.removeAttribute("disabled","")
+            secondStepSubmitButton.removeAttribute("disabled","")
         }
     } else if(lastName.length === 0){
         inputLastName.style.borderColor = blue;
@@ -263,6 +260,7 @@ const checkingLastName = lastName => {
         inputLastName.name = "reqNoForInput";
     }
 }
+
 //save the value of name
 inputLastName.addEventListener("keyup", () => {
     const lastName = inputLastName.value.trim();
@@ -270,8 +268,6 @@ inputLastName.addEventListener("keyup", () => {
 })
 
 ////////all actions for date input
-
-//checking requirement for date
 
 const onFocusDate = () => {
     if(inputDate.name === "reqForInput") {
@@ -298,7 +294,7 @@ const overEighteen = dayOfBirth => {
         inputDate.style.borderColor = blue;
         inputDate.name = "reqForInput";
         if(inputFirstName.name === "reqForInput" && inputLastName.name === "reqForInput"){
-            secondSubBtn.removeAttribute("disabled","")
+            secondStepSubmitButton.removeAttribute("disabled","")
         }
     }else{
         inputDate.style.borderColor = red1;
@@ -308,29 +304,29 @@ const overEighteen = dayOfBirth => {
 
 //checking the age
 inputDate.onchange = (e) => {
-    secondSubBtn.setAttribute("disabled","");
+    secondStepSubmitButton.setAttribute("disabled","");
     const dayOfBirth = new Date(e.target.value);
     overEighteen(dayOfBirth);
 }
 
 //submit for second step
-formSecond.addEventListener('submit', (e) => {
+secondFormRegistration.addEventListener('submit', (e) => {
     e.preventDefault();
     containerSecondReg.classList.add("display");
     containerSucces.classList.remove("display");
 })
 
 //submit for third step clean all inputs and reset req  for pass
-lastBtn.addEventListener('click', (e) => {
+lastStepSuccesButton.addEventListener('click', (e) => {
     containerSucces.classList.add("display");
     containerFirstReg.classList.remove("display");
     inputEmail.value = "";
-    inputPass.value = "";
+    inputPassword.value = "";
     inputFirstName.value = "";
     inputLastName.value = "";
-    inputCheck.checked = false;
+    inputCheckPrivacyPolicy.checked = false;
     inputDate.value = null;
-    firstReq.style.color = red;
-    secondReq.style.color = red;
-    thirdReq.style.color = red;
+    firstRequirementHeader.style.color = red;
+    secondRequirementHeader.style.color = red;
+    thirdRequirementHeader.style.color = red;
 })

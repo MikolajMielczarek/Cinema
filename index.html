@@ -4,112 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@600&family=Roboto&family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Monterail Cinema</title>
+    <meta
+      name="description"
+      content="The Best Cinema in Wrocław. Registration? Book a ticket?"
+    />
+    <meta name="author" content="Mikołaj Mielczarek">
+    <title>Cinema Monterail in Wrocław</title>
 </head>
 
 
 <body>
-        <div class="container-page">
+    <div class="container-page">
 
-            <div class="container-header">
-                
-                <img src="assets/logo.svg" alt="logo of Cinema">
-                <img src="assets/Developed with ♥ by Monterail.svg" alt="love">
-                
-            </div>
+        <header class="header">  
+            <img class='header__logo' src="assets/logo.svg" alt="logo of Cinema">
+            <img class='header__love' src="assets/Developed with ♥ by Monterail.svg" alt="love">   
+        </header>
 
-            <div class="registration first-step display">
-                
-                <h1 class="h1-grey-1">Ahoy you!</h1>
-                <h1 class="h1-grey-2 h1-grey-1">Care to register?</h1>
-              
-                <form class="first-form form">
-
-                    <label>email</label>
-                    <div class="input-div">
-                        <input class="input-email" type="email"
+        <div class="registration first-step">
+            <header class="registration__headings"> 
+                <h1 class="registration__headings__first">Ahoy you!</h1>
+                <h1 class="registration__headings__second registration__headings__first">Care to register?</h1>
+            </header>   
+            <form class="first-form registration__form">
+                <div class="registration__inputdiv">
+                    <label class="registration__inputdiv__label" for="email">email</label>
+                    <input class="registration__inputdiv--input-email"
+                        id="email"
+                        type="email"
                         placeholder="Something ending with monterail.com"
-                        onfocus="onFocusEmail()"
-                        onfocusout="outFocusEmail()"
-                        required>
-                    </div>
-                    <label>password</label>
-                    <div class="input-div">
-                        <div class="container-btn-pass">
-                            <input class="input-password" type="password" placeholder="Enter your password" onfocus="onFocusPass()" onfocusout="outFocusPass()" required>
-                            <button type="button"></button>
-                        </div>
-                    </div>
-                    <div class="password-requirements">
-                        <h2 class="first-req">At least 8 characters</h2>
-                        <h2 class="second-req">At least one letter</h2>
-                        <h2 class="third-req">At least one digit</h2>
-                    </div>
-                    <div class="container-btn">
-                        <a href="#">Log in instead</a>
-                        <button class="first-step-sub-btn" type="submit">Next step</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="registration second-step">
-                
-                    <h1 class="h1-grey-1">Great!</h1>
-                    <h1 class="h1-grey-2 h1-grey-1">Now your name</h1>
-               
-
-                <form class="second-form form">
-
-                    <label>first name</label>
-                    <div class="input-div">
-                        <input class="input-name" type="text" placeholder="e.g. Jessica"
-                        onfocus="onFocusFirstName()" onfocusout="outFocusFirstName()"
-                         required>
-                    </div>
-                    <label>last name</label>
-                    <div class="input-div">
-                        <input class="input-last-name" type="text" placeholder="e.g. Walton"
-                        onfocus="onFocusLastName()" onfocusout="outFocusLastName()"
-                        required>
-                    </div>
-                    <label>date of birth</label>
-                    <div class="input-div">
-                        <input class="input-date" type="date"
-                        onfocus="onFocusDate()" onfocusout="outFocusDate()"
-                        required>
-                    </div>
-                    <h2 class="password-requirements">You should be minium 18 years old</h2>
-                    <div class="input-div-check">
-                        <input class="input-check" type="checkbox" required>
-                        <span class="txt">&nbsp&nbspI accept&nbsp</span>
-                        <a class="txt" href="#">Privacy Policy</a>
-                    </div>
-                    <div class="container-btn">
-                        <a href="#">Log in instead</a>
-                        <button class="second-step-sub-btn" type="submit">Register</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="registration success-message display">
-
-                <h1 class="h1-name h1-grey-1">Good job Gorgia!</h1>
-                    
-                <h3 class="h3-email">We have sent you an email to <span>goerogia.swanson@monterail.com</span>.<br>
-                Make sure to click the link from the message to activate your account.
-                </h3>
-
-                <div class="container-btn-2">
-                    <button class="last-btn">Go to homepage</button>
+                        onfocus="onFocusEmailInput()"
+                        onfocusout="outFocusEmailInput()"
+                        required
+                    >
                 </div>
+                <div class="container-btn-pass registration__inputdiv">
+                    <label class="registration__inputdiv__label"
+                        for="password">password
+                    </label>
+                    <input class="registration__inputdiv--input-password"
+                        id="password"
+                        type="password" 
+                        placeholder="Enter your password"
+                        onfocus="onFocusPasswordInput()"
+                        onfocusout="outFocusPasswordInput()"
+                        required
+                    >
+                    <button
+                        class="registration__inputdiv--button"
+                        type="button">
+                    </button>
+                </div>
+                </div>
+                <div class="registration--password-requirements">
+                    <p class="registration--password-requirements--registration--password-requirements--first-req">At least 8 characters</p>
+                    <p class="registration--password-requirements--registration--password-requirements--second-req">At least one letter</p>
+                    <p class="registration--password-requirements--registration--password-requirements--third-req">At least one digit</p>
+                </div>
+                <div class="registration__buttons">
+                    <a class="registration__buttons__login" href="#">Log in instead</a>
+                    <button class="registration__buttons__button1"
+                        type="submit">
+                        Next step
+                    </button>
+                </div>
+            </form>
+        </div>
 
+        <div class="registration second-step display">
+            <header>
+                <h1 class="registration__headings__first">Great!</h1>
+                <h1 class="registration__headings__second registration__headings__first">Now your name</h1>
+            </header>
+            <form class="second-form registration__form">
+                <div class="registration__inputdiv">
+                    <label class="registration__inputdiv__label" for="firstName">first name</label>
+                    <input class="registration__inputdiv--input-first-name"
+                        id="firstName"
+                        type="text"
+                        placeholder="e.g. Jessica"
+                        onfocus="onFocusFirstName()"
+                        onfocusout="outFocusFirstName()"
+                        required
+                    >
+                </div>
+                <div class="registration__inputdiv">
+                    <label class="registration__inputdiv__label" for="lastName">last name</label>
+                    <input class="registration__inputdiv--input-last-name"
+                        id="lastName"
+                        type="text"
+                        placeholder="e.g. Walton"
+                        onfocus="onFocusLastName()"
+                        onfocusout="outFocusLastName()"
+                        required
+                    >
+                </div>
+                <div class="registration__inputdiv">
+                    <label ClassName="registration__inputdiv__label" for="dateOfBirth">date of birth</label>
+                    <input class="registration__inputdiv--input-date"
+                        id="dateOfBirth"
+                        type="date"
+                        onfocus="onFocusDate()"
+                        onfocusout="outFocusDate()"
+                        required
+                    >
+                </div>
+                <p class="registration--password-requirements">You should be minium 18 years old</p>
+                <div class="registration__inputdiv-check">
+                    <input class="registration__inputdiv--input-check"
+                        type="checkbox"
+                        required
+                    >
+                    <span class="registration__divcheck--span">&nbsp&nbspI accept&nbsp</span>
+                    <a class="registration__divcheck--privacy" href="#">Privacy Policy</a>
+                </div>
+                <div class="registration__buttons">
+                    <a class="registration__buttons__login" href="#">Log in instead</a>
+                    <button class="registration__buttons__button"
+                        type="submit">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="registration success-message display">
+            <header>
+                <h1 class="registration__headings__succes registration__headings__first">Good job Gorgia!</h1>
+            </header>          
+            <h3 class="registration--succesh3">We have sent you an email to 
+                <span class="registration--succesh3--span">goerogia.swanson@monterail.com</span>.<br>
+                Make sure to click the link from the message
+                to activate your account.
+            </h3>
+            <div class="registration--succes-div-button">
+                <button class="registration--succes-div-button--button">Go to homepage</button>
             </div>
         </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
