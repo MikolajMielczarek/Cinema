@@ -19,15 +19,15 @@ const inputDate = document.querySelector(".registration__inputdiv--input-date");
 const inputCheckPrivacyPolicy = document.querySelector(".registration__inputdiv--input-check");
 
 //buttons
-const firstStepSubmitButton = document.querySelector(".registration__buttons__button1");
-const secondStepSubmitButton = document.querySelector(".egistration__buttons__button");
+const firstStepSubmitButton = document.querySelector(".registration__buttons--button1");
+const secondStepSubmitButton = document.querySelector(".registration__buttons--button2");
 const lastStepSuccesButton = document.querySelector(".registration--succes-div-button--button");
 
-//h1, h2 and h3
+//h1, p and h3
 const h1Name = document.querySelector(".registration__headings__succes");
 const firstRequirementHeader = document.querySelector(".registration--password-requirements--first-req");
-const secondRequirementHeader = document.querySelector(".registration--password-requirements--registration--password-requirements--second-req");
-const thirdRequirementHeader = document.querySelector(".registration--password-requirements--registration--password-requirements--third-req");
+const secondRequirementHeader = document.querySelector(".registration--password-requirements--second-req");
+const thirdRequirementHeader = document.querySelector(".registration--password-requirements--third-req");
 const h3Email = document.querySelector(".registration--succesh3");
 
 //const for colors inputs - borders - buttons - req
@@ -37,11 +37,29 @@ const red3 = "#F47073";
 const gray1 = "#F7F7F7";
 const gray2 = "#85868D";
 const gray3 = "#343541";
+const inputHoverGray = "#E5E5E5";
 const blue = "#2F80ED";
-const green = "green"
-const red = "red"
+const green = "green";
+const red = "red";
+
 
 ////////all actions for email input
+const onMouseOverEmailInput = () => {
+    if(inputEmail === document.activeElement && (inputEmail.name === "reqForInput"|| inputEmail.name === "noLengthForInput")){
+        inputEmail.style.borderColor = blue;
+    }
+    else if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
+        inputEmail.style.borderColor = inputHoverGray;
+    }
+}
+
+const onMouseOutEmailInput = () => {
+    if(inputEmail === document.activeElement && (inputEmail.name === "reqForInput"|| inputEmail.name === "noLengthForInput")) {
+        inputEmail.style.borderColor = blue;
+    } else if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput"){
+        inputEmail.style.borderColor = gray1;
+    }
+}
 
 const onFocusEmailInput = () => {
     if(inputEmail.name === "reqForInput" || inputEmail.name === "noLengthForInput") {
@@ -107,7 +125,25 @@ buttonSeeHidePassword.addEventListener("click", () => {
     }
 })
 
-//checking req for border color onfocus and outfocus
+//checking req for border color onfocus and outfocus onhover outhover
+
+const onMouseOverPasswordInput = () => {
+    if(inputPassword === document.activeElement && (firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red)){
+        inputPassword.style.borderColor = blue;
+    }
+    else if(firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red) {
+        inputPassword.style.borderColor = inputHoverGray;
+    }
+}
+
+const onMouseOutPasswordInput = () => {
+    if(inputPassword === document.activeElement && (firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red)) {
+        inputPassword.style.borderColor = blue;
+    } else if(firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red){
+        inputPassword.style.borderColor = gray1;
+    }
+}
+
 const onFocusPasswordInput = () => {
     if(firstRequirementHeader.style.color != red && secondRequirementHeader.style.color != red && thirdRequirementHeader.style.color != red) 
         {
@@ -186,6 +222,23 @@ firstFormRegistration.addEventListener('submit', (e) => {
 
 ////////all actions for first name input
 
+const onMouseOverFirstNameInput = () => {
+    if(inputFirstName === document.activeElement && (inputFirstName.name === "reqForInput"|| inputFirstName.name === "noLengthForInput")){
+        inputFirstName.style.borderColor = blue;
+    }
+    else if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput") {
+        inputFirstName.style.borderColor = inputHoverGray;
+    }
+}
+
+const onMouseOutFirstNameInput = () => {
+    if(inputFirstName === document.activeElement && (inputFirstName.name === "reqForInput"|| inputFirstName.name === "noLengthForInput")) {
+        inputFirstName.style.borderColor = blue;
+    } else if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput"){
+        inputFirstName.style.borderColor = gray1;
+    }
+}
+
 const onFocusFirstName = () => {
     if(inputFirstName.name === "reqForInput" || inputFirstName.name === "noLengthForInput") {
         inputFirstName.style.borderColor = blue;
@@ -231,6 +284,23 @@ inputFirstName.addEventListener("keyup", () => {
 
 ////////all actions for last name input
 
+const onMouseOverLastNameInput = () => {
+    if(inputLastName === document.activeElement && (inputLastName.name === "reqForInput"|| inputLastName.name === "noLengthForInput")){
+        inputLastName.style.borderColor = blue;
+    }
+    else if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput") {
+        inputLastName.style.borderColor = inputHoverGray;
+    }
+}
+
+const onMouseOutLastNameInput = () => {
+    if(inputLastName === document.activeElement && (inputLastName.name === "reqForInput"|| inputFirstName.name === "noLengthForInput")) {
+        inputLastName.style.borderColor = blue;
+    } else if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput"){
+        inputLastName.style.borderColor = gray1;
+    }
+}
+
 const onFocusLastName = () => {
     if(inputLastName.name === "reqForInput" || inputLastName.name === "noLengthForInput") {
         inputLastName.style.borderColor = blue;
@@ -269,14 +339,34 @@ inputLastName.addEventListener("keyup", () => {
 
 ////////all actions for date input
 
-const onFocusDate = () => {
-    if(inputDate.name === "reqForInput") {
+const onMouseOverDateInput = () => {
+    if(inputDate === document.activeElement && (inputDate.name === "reqForInput"|| inputDate.name === "noLengthForInput")){
         inputDate.style.borderColor = blue;
+    }
+    else if(inputDate.name === "reqForInput" || inputDate.name === "noLengthForInput") {
+        inputDate.style.borderColor = inputHoverGray;
     }
 }
 
-const outFocusDate = () => {
-    if(inputDate.name === "reqForInput" || inputDate.name === "noLengthForInput") {
+const onMouseOutDateInput = () => {
+    if(inputDate === document.activeElement && (inputDate.name === "reqForInput")) {
+        inputDate.style.borderColor = blue;
+    } else if(inputDate.name === "reqForInput"){
+        inputDate.style.borderColor = gray1;
+    } else if(inputDate.name === "reqNoForInput"){
+        inputDate.style.borderColor = red1;
+    }
+}
+
+const onFocusDateInput = () => {
+    if(inputDate.name === "reqForInput") {
+        inputDate.style.borderColor = blue;
+        inputDate.style.color = gray3;
+    }
+}
+
+const outFocusDateInput = () => {
+    if(inputDate.name === "reqForInput") {
         inputDate.style.borderColor = gray1;
     }
     if(inputDate.name === "reqNoForInput"){

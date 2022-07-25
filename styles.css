@@ -1,6 +1,9 @@
-/*As I know only I am working on that project I use very "fitting" names for all classes*/
 
-/*I add some responsive for more than projecting 3 screens to avoid mistakes as much as possible during checking the responsiveness of the application*/
+/*
+here are use mostly classes to show BEM solution for all
+in react solution are mostly tags
+for react solution specifity is lower so as I understand it is better and more clear to read and easer for possible changes
+*/
 
 /*variables*/
 :root {
@@ -16,7 +19,7 @@
     /****fonts****/
     /*font family*/
     --h1-family: 'Eczar';
-    --label-font: 'Roboto Mono';
+    --label-and-button-font: 'Roboto Mono';
     --p-txt-family: 'Roboto';
 
     /*colors*/
@@ -33,6 +36,7 @@
     --line-height-80: 5.125rem;
     --font-size-22: 1.375rem;
     --font-size-18: 1.125rem;
+    --line-height-18: 1.125rem;
     --font-size-14: 0.875rem;
     --line-height-14: 1.125rem; 
     --font-weight-400: 400;
@@ -83,20 +87,20 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 124px;
+    padding-bottom: 124px;
 }
 
-.registration__headings__first {
+.registration__headings__heading {
     font-family: var(--h1-family);
-    width: 95%;
     font-size: var(--font-size-80);
     font-weight: var(--font-weight-600);
     line-height: var(--line-height-80);
     letter-spacing: -0,01em;
     color: var(--gray-font);
-    padding-left: 50px;
+    padding-left: 12px;
 }
 
-.registration__headings__second {
+.registration__headings__heading + .registration__headings__heading {
     opacity: 0.6;
     padding-bottom: 40px;
 }
@@ -104,17 +108,29 @@ body {
 .registration__form {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    font-family: var(--label-and-button-font);
+    font-style:normal;
+    font-size: var(--font-size-18);
+    line-height: var(--line-height-18);
+    font-weight: var(--font-weight-400);
+    width: 77%;
     background-color: var(--bgc-color-white);
     box-shadow: 0px 4px 22px rgba(52, 53, 65, 0.15);
     border-radius: 24px;
-    padding:  64px;
+    padding:  46px 64px 64px 64px;
 }
 
+.registration__inputdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    position: relative;
+}
+
+
 .registration__inputdiv__label {
-    width: 60%;
-    font-family: var(--label-font);
-    font-style: normal;
+    width: auto;
     font-weight: var(--font-weight-700);
     font-size: var(--font-size-14);
     line-height: var(--line-height-14);
@@ -124,22 +140,10 @@ body {
     padding-bottom: 12px;
 }
 
-.registration__inputdiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--bgc-input-gray);
-    border-radius: 8px;
-}
-
-::placeholder {
-    color: var(--placeholder-color);
-    opacity: 1; /* Firefox */
-  }
-
 .registration__inputdiv input {
     height: 55px;
     width: var(--width-100);
+    font-family: 'Roboto';
     font-size: var(--font-size-18);
     background-color: var(--bgc-input-gray);
     border-style: var(--border-style-1);
@@ -150,51 +154,38 @@ body {
     padding: 24px;
 }
 
-.registration__inputdiv input:hover {
+input:hover {
     background-color: var(--bgc-input-hover);
     border-color: var(--bgc-input-hover);
 }
 
-.registration__inputdiv input:focus {
+input:focus {
     outline: none !important;
     border-color: var(--border-color-blue);
 }
 
-.container-btn-pass {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--width-100);
-    position: relative;
-}
-
-.registration__inputdiv .registration__inputdiv--input-password {
-    width: var(--width-100);
-    flex-grow: 1;
-}
+input::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1; /* Firefox */
+  }
 
 .registration__inputdiv--button {
-    background-image: url("assets/eye.svg");
+    width: 32px;
+    height: 32px;
     background-position: center;
     background-color:rgba(0, 0, 0, 0.0);
-    width:30px;
-    height: 22px;
+    background-image: url("assets/eye.svg");
     border-style: none;
     cursor: pointer;
     position: absolute;
-    right: 4%;
+    top: calc(48px + 11.5px);
+    right: 3%;
 }
 
-
-.registration--password-requirements {
+.registration--password-requirements, .registration--paragraph-minimum-age {
     padding-top: 8px;
     padding-bottom: 30px;
-}
-
-p {
     font-family: var(--p-txt-family);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
     font-size: var(--font-size-14);
     line-height: 170%;
     letter-spacing: 0.04em;
@@ -205,59 +196,50 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.registration__buttons__login {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: var(--label-font);
+    font-family: var(--label-and-button-font);
     font-style: normal;
     font-weight: var(--font-weight-500);
     font-size: var(--font-size-18);
     line-height: 100%;
     letter-spacing: 0.015em;
+}
+
+.registration__buttons__login {
     color: var(--red-1-normal);
     text-decoration: none;
 }
 
-.registration__buttons__button1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    font-family: var(--label-font);
-    font-style: normal;
-    font-weight: var(--font-weight-500);
-    font-size: var(--font-size-18);
-    line-height: 100%;
-    letter-spacing: 0.015em;
+.registration__buttons__button {
+    all:inherit;
+    cursor: pointer;
+    width: 48%;
+    height: 56px;
     color: var(--bgc-color-white);
     padding: 20px 40px;
     background-color: var(--red-1-normal);
     border-radius: 64px;
     border: 5px solid var(--red-1-normal);
-
 }
 
-.registration__buttons__button1:hover {
+.registration__buttons__button:hover {
     background: var(--red-2-hover);
     border-color:var(--red-2-hover);
 }
 
-.registration__buttons__button1:active {
+.registration__buttons__button:active {
     border: 5px solid var(--red-4-border-active);
     background: var(--red-2-hover);
 }
 
 /***second step of registration***/
 
-.registration__inputdiv .registration__inputdiv--input-date {
+.registration__inputdiv__label + .registration__inputdiv--input-date {
     color: var(--placeholder-color);
 }
 
-.registration__inputdiv .registration__inputdiv--input-date:focus {
-    color:var(--gray-font);
+.registration--paragraph-minimum-age {
+    padding-bottom: 25.5px;
 }
 
 .registration__inputdiv-check {
@@ -266,6 +248,13 @@ p {
     justify-content: flex-start;
     align-items: center;
     padding-bottom: 40px;
+    font-family: var(--p-txt-family);
+    font-style: normal;
+    font-weight: var(--font-weight-400);
+    font-size: var(--font-size-18);
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: var(--gray-2-font);
 }
 
 .registration__inputdiv--input-check {
@@ -274,16 +263,6 @@ p {
     height: 24px;
     border: 0.75px solid #AEAEB3;
     border-radius: 8px;
-}
-
-.registration__divcheck--privacy {
-    font-family: var(--p-txt-family);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
-    font-size: var(--font-size-18);
-    line-height: 21px;
-    letter-spacing: 0.04em;
-    color: var(--gray-2-font);
 }
 
 .registration__divcheck--privacy {
@@ -329,7 +308,7 @@ p {
     align-items: center;
     justify-content: center;
     width: 37%;
-    font-family: var(--label-font);
+    font-family: var(--label-and-button-font);
     font-style: normal;
     font-weight: var(--font-weight-500);
     font-size: var(--font-size-18);
@@ -358,44 +337,40 @@ p {
 
 @media (max-width:1312px) {
     .registration {
-        width:75%;
+        width:60%;
     }
 
-    .registration__headings__first {
-        padding-left: 95px;
+    .registration__headings__heading {
+        padding-left: 40px;
     }
     
     .registration__form {
         width: 80%;
     }
     
-    .registration__inputdiv--button {
-        width: 50%;
-    }
-    
     /***third step of registration***/
-   
    
     .registration__headings__succes {
         padding-left: 0px;
     }
     
     .registration--succes-div-button--button {
-        width: 35%;
+        width: 42%;
     }
 
 }
 
 @media (max-width:1200px) {
-    
-    .registration__headings__first {
-        padding-left: 60px;
+
+    .registration {
+        width:80%;
     }
     
-    .registration__form {
-        width: 80%;
+    .registration__headings__heading {
+        padding-left: 0px;
     }
-    .registration__buttons__button1,.registration__buttons__button {
+    
+    .registration__buttons__button {
         width: 47%;
         padding: 14px 40px;
     }
@@ -415,7 +390,7 @@ p {
         padding: 24px 0px 70px 0px;
     }
 
-    .header img:last-of-type {
+    .header--love {
         display: none;
     }
 
@@ -424,14 +399,14 @@ p {
         padding: 24px 24px 22px 24px;
     }
 
-    .registration__headings__first {
+    .registration__headings__heading {
         font-size: 3.75rem;
         line-height: 3.813rem;
         text-align: center;
         padding-left: 0px;
     }
 
-    .registration__headings__second {
+    .registration__headings__heading + .registration__headings__heading {
         padding-bottom: 48px;
     }
 
@@ -441,19 +416,13 @@ p {
         padding-top: 0px;
     }
     
-    .registration__buttons__button1,.registration__buttons__button {
-        width: 47%;
-        padding: 14px 40px;
+    .registration__buttons__button {
+        width: 49%;
     }
     
     /***third step of registration***/
     .registration__headings__succes {
         padding-top: 80px;
-        padding-bottom: 48px;
-    }
-
-    .registration--succesh3 {
-        padding-bottom: 48px;
     }
 
     .registration--succes-div-button--button {
@@ -463,7 +432,7 @@ p {
 
 @media (max-width:768px) {
 
-    .registration__headings__first {
+    .registration__headings__heading {
         font-size: 3.313rem;
         line-height: 3.375rem;
     }
@@ -472,16 +441,17 @@ p {
         width: 80%;
         padding: 0px;
     }
+    
     .registration__buttons {
         flex-direction: column-reverse;
         align-items: center;
     }
 
-    a {
+    .registration__buttons__login {
         padding-top: 35px;
     }
 
-    .registration__buttons__button1,.registration__buttons__button {
+    .registration__buttons__button {
         width: 65%;
     }
 
@@ -511,7 +481,7 @@ p {
         padding-bottom:64px;
     }
 
-    .registration__headings__first {
+    .registration__headings__heading {
         font-size: 2.5rem;
         line-height: 2.563rem;
     }
@@ -520,7 +490,7 @@ p {
         width: var(--width-100);
     }
 
-    .registration__buttons__button1,.registration__buttons__button {
+    .registration__buttons__button {
         width: var(--width-100);
     }
     

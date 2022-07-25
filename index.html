@@ -21,28 +21,32 @@
     <div class="container-page">
 
         <header class="header">  
-            <img class='header__logo' src="assets/logo.svg" alt="logo of Cinema">
-            <img class='header__love' src="assets/Developed with ♥ by Monterail.svg" alt="love">   
+            <img class='header--logo' src="assets/logo.svg" alt="logo of Cinema">
+            <img class='header--love' src="assets/Developed with ♥ by Monterail.svg" alt="love sign">   
         </header>
 
-        <div class="registration first-step">
+        <div class="registration first-step display">
             <header class="registration__headings"> 
-                <h1 class="registration__headings__first">Ahoy you!</h1>
-                <h1 class="registration__headings__second registration__headings__first">Care to register?</h1>
+                <h1 class="registration__headings__heading">Ahoy you!</h1>
+                <h1 class="registration__headings__heading">Care to register?</h1>
             </header>   
             <form class="first-form registration__form">
                 <div class="registration__inputdiv">
-                    <label class="registration__inputdiv__label" for="email">email</label>
+                    <label class="registration__inputdiv__label"
+                        for="email">email
+                    </label>
                     <input class="registration__inputdiv--input-email"
                         id="email"
                         type="email"
                         placeholder="Something ending with monterail.com"
                         onfocus="onFocusEmailInput()"
                         onfocusout="outFocusEmailInput()"
+                        onmouseover="onMouseOverEmailInput()"
+                        onmouseout="onMouseOutEmailInput()"
                         required
                     >
                 </div>
-                <div class="container-btn-pass registration__inputdiv">
+                <div class="registration__inputdiv">
                     <label class="registration__inputdiv__label"
                         for="password">password
                     </label>
@@ -52,6 +56,8 @@
                         placeholder="Enter your password"
                         onfocus="onFocusPasswordInput()"
                         onfocusout="outFocusPasswordInput()"
+                        onmouseover="onMouseOverPasswordInput()"
+                        onmouseout="onMouseOutPasswordInput()"
                         required
                     >
                     <button
@@ -59,15 +65,14 @@
                         type="button">
                     </button>
                 </div>
-                </div>
                 <div class="registration--password-requirements">
-                    <p class="registration--password-requirements--registration--password-requirements--first-req">At least 8 characters</p>
-                    <p class="registration--password-requirements--registration--password-requirements--second-req">At least one letter</p>
-                    <p class="registration--password-requirements--registration--password-requirements--third-req">At least one digit</p>
+                    <p class="registration--password-requirements--first-req">At least 8 characters</p>
+                    <p class="registration--password-requirements--second-req">At least one letter</p>
+                    <p class="registration--password-requirements--third-req">At least one digit</p>
                 </div>
                 <div class="registration__buttons">
                     <a class="registration__buttons__login" href="#">Log in instead</a>
-                    <button class="registration__buttons__button1"
+                    <button class="registration__buttons__button registration__buttons--button1"
                         type="submit">
                         Next step
                     </button>
@@ -75,10 +80,10 @@
             </form>
         </div>
 
-        <div class="registration second-step display">
+        <div class="registration second-step">
             <header>
-                <h1 class="registration__headings__first">Great!</h1>
-                <h1 class="registration__headings__second registration__headings__first">Now your name</h1>
+                <h1 class="registration__headings__heading">Great!</h1>
+                <h1 class="registration__headings__heading">Now your name</h1>
             </header>
             <form class="second-form registration__form">
                 <div class="registration__inputdiv">
@@ -89,6 +94,8 @@
                         placeholder="e.g. Jessica"
                         onfocus="onFocusFirstName()"
                         onfocusout="outFocusFirstName()"
+                        onmouseover="onMouseOverFirstNameInput()"
+                        onmouseout="onMouseOutFirstNameInput()"
                         required
                     >
                 </div>
@@ -100,31 +107,35 @@
                         placeholder="e.g. Walton"
                         onfocus="onFocusLastName()"
                         onfocusout="outFocusLastName()"
+                        onmouseover="onMouseOverLastNameInput()"
+                        onmouseout="onMouseOutLastNameInput()"
                         required
                     >
                 </div>
                 <div class="registration__inputdiv">
-                    <label ClassName="registration__inputdiv__label" for="dateOfBirth">date of birth</label>
+                    <label class="registration__inputdiv__label" for="dateOfBirth">date of birth</label>
                     <input class="registration__inputdiv--input-date"
                         id="dateOfBirth"
                         type="date"
-                        onfocus="onFocusDate()"
-                        onfocusout="outFocusDate()"
+                        onfocus="onFocusDateInput()"
+                        onfocusout="outFocusDateInput()"
+                        onmouseover="onMouseOverDateInput()"
+                        onmouseout="onMouseOutDateInput()"
                         required
                     >
                 </div>
-                <p class="registration--password-requirements">You should be minium 18 years old</p>
+                <p class="registration--paragraph-minimum-age">You should be minium 18 years old</p>
                 <div class="registration__inputdiv-check">
                     <input class="registration__inputdiv--input-check"
                         type="checkbox"
                         required
                     >
-                    <span class="registration__divcheck--span">&nbsp&nbspI accept&nbsp</span>
+                    <span class="registration__divcheck--span">&nbspI accept&nbsp</span>
                     <a class="registration__divcheck--privacy" href="#">Privacy Policy</a>
                 </div>
                 <div class="registration__buttons">
                     <a class="registration__buttons__login" href="#">Log in instead</a>
-                    <button class="registration__buttons__button"
+                    <button class="registration__buttons__button registration__buttons--button2"
                         type="submit">
                         Register
                     </button>
@@ -134,7 +145,7 @@
 
         <div class="registration success-message display">
             <header>
-                <h1 class="registration__headings__succes registration__headings__first">Good job Gorgia!</h1>
+                <h1 class="registration__headings__succes registration__headings__heading">Good job Gorgia!</h1>
             </header>          
             <h3 class="registration--succesh3">We have sent you an email to 
                 <span class="registration--succesh3--span">goerogia.swanson@monterail.com</span>.<br>
